@@ -15,6 +15,28 @@ h4 {
   color: #333;
 }
 
+h3 {
+  font-size: 1.8em;
+  color: #4b0082;
+  margin-bottom: 15px;
+}
+
+h5 {
+  font-size: 1.5em;
+  color: #4b0082;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1em;
+  color: #333;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .video-section {
   margin: 20px auto;
 }
@@ -58,3 +80,51 @@ h4 {
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
+
+.alumni-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: #fff8f0;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.alumni-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.alumni-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4b0082;
+}
+
+.alumni-box h5 {
+  color: #4b0082;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.alumni-box p {
+  font-size: 1em;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .alumni-box {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .alumni-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
