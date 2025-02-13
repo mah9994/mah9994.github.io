@@ -1,8 +1,9 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #f4f4f4;
+  background-color: #aac2ce;
   padding: 20px;
+  color: #333;
 }
 
 h1 {
@@ -10,7 +11,7 @@ h1 {
 }
 
 h4 {
-  color: #555;
+  color: #333;
 }
 
 .video-section {
@@ -27,10 +28,16 @@ h4 {
 .link-box {
   text-align: center;
   width: 200px;
-  background: white;
+  background: #d2b08c; /* Beige tone for contrast */
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.link-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .link-box img {
@@ -44,4 +51,9 @@ h4 {
   text-decoration: none;
   color: #4b0082;
   font-weight: bold;
+}
+
+.video-section video {
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
