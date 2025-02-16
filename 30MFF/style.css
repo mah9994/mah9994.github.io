@@ -6,6 +6,7 @@
   --background-gradient: linear-gradient(to bottom, #aac2ce, #d2b08c);
 }
 
+/* main text descriptions */
 body {
   position: relative;
   overflow: auto;
@@ -42,13 +43,14 @@ p {
   margin: 0 auto;
 }
 
+/* for video */
 .video-section {
   margin: 20px auto;
   position: relative;
   z-index: 10;
 }
 
-/* for background */
+/* for background effects */
 @keyframes sparkle {
   0% {
     opacity: 0;
@@ -66,11 +68,11 @@ p {
 
 .star {
   position: absolute;
-  border-radius: 50%;
   background-color: yellow;
   opacity: 0;
   animation: sparkle 1.5s ease-in-out infinite;
   pointer-events: none;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); /* Star shape */
 }
 
 /* Adjust the speed and size of the stars */
