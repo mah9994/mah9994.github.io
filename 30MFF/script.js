@@ -14,16 +14,47 @@ document.addEventListener("DOMContentLoaded", function () {
 // Add event listeners for tips
 const tips = document.querySelectorAll('.tip');
 
-document.querySelectorAll('.tip-star').forEach(star => {
-  star.addEventListener('click', () => {
-    // Remove active class from all stars first
-    document.querySelectorAll('.tip-star').forEach(s => s.classList.remove('active'));
 
-    // Expand the clicked star
-    star.classList.add('active');
-    star.querySelector('.tip-text').style.display = 'block'; // Show tip text inside
+document.addEventListener("DOMContentLoaded", function () {
+  // Select all stars
+  const stars = document.querySelectorAll('.tip-star');
+
+  stars.forEach(star => {
+    star.addEventListener('click', function (event) {
+      // Remove existing description box if any
+      const existingBox = document.querySelector('.description-box');
+      if (existingBox) {
+        existingBox.remove();
+      }
+
+      // Create description box
+      const descriptionBox = document.createElement('div');
+      descriptionBox.classList.add('description-box');
+      descriptionBox.textContent = star.getAttribute('data-text');
+
+      // Position the description box near the clicked star
+      const rect = star.getBoundingClientRect();
+      descriptionBox.style.position = 'absolute';
+      descriptionBox.style.left = `${rect.left + window.scrollX + 30}px`; // Adjust position
+      descriptionBox.style.top = `${rect.top + window.scrollY}px`;
+      descriptionBox.style.padding = '10px';
+      descriptionBox.style.background = 'gold';
+      descriptionBox.style.border = '2px solid black';
+      descriptionBox.style.borderRadius = '10px';
+      descriptionBox.style.boxShadow = '2px 2px 10px rgba(0,0,0,0.2)';
+      descriptionBox.style.cursor = 'pointer';
+      
+      // Append to body
+      document.body.appendChild(descriptionBox);
+
+      // Remove box on click
+      descriptionBox.addEventListener('click', function () {
+        descriptionBox.remove();
+      });
+    });
   });
 });
+
 
 
 
