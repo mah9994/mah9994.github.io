@@ -293,19 +293,3 @@ footer a:hover {
 #tipForm button:hover {
   background-color: #ff6a00;
 }
-
-.tip .title {
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-.tip .description {
-  font-size: 1em;
-  color: #666;
-}
-
-.tip .divider {
-  border-top: 2px solid #d2b08c; /* Divider with your secondary color */
-  margin: 10px 0;
-}
