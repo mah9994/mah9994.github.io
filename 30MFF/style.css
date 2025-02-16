@@ -30,6 +30,11 @@ h3 {
   margin-bottom: 15px;
 }
 
+h6 {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
 h5 {
   font-size: 1.5em;
   margin-bottom: 10px;
@@ -37,7 +42,7 @@ h5 {
 }
 
 h6 {
-  font-size: 1em;
+  font-size: 0.6em;
   margin-bottom: 5px;
 }
 
