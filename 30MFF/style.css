@@ -17,12 +17,12 @@ body {
   color: var(--text-color);
 }
 
-h1 {
-  color: #5a3e2b;
+h1, h5 {
+  color: var(--primary-color);
 }
 
-h3, h5 {
-  color: var(--primary-color);
+h2 {
+  color: #5a3e2b;
 }
 
 h3 {
@@ -34,6 +34,11 @@ h5 {
   font-size: 1.5em;
   margin-bottom: 10px;
   font-weight: bold;
+}
+
+h6 {
+  font-size: 1em;
+  margin-bottom: 5px;
 }
 
 p {
