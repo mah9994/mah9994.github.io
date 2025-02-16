@@ -141,7 +141,7 @@ p {
 .alumni-container {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 60px;
   flex-wrap: wrap;
 }
 
@@ -150,6 +150,10 @@ p {
   height: 400px;
   perspective: 1000px;
   cursor: pointer;
+}
+
+.title-text {
+  text-align: center;
 }
 
 .card-inner {
