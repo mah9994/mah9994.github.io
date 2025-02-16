@@ -1,7 +1,7 @@
 /* background color */
 :root {
   --primary-color: #4b0082;
-  --secondary-color: #d2b08c;
+  --secondary-color: #5a3e2b;
   --text-color: #333;
   --background-gradient: linear-gradient(to bottom, #c5d8e2, #d2b08c);
 }
@@ -24,17 +24,19 @@ h1, h5 {
 h2 {
   font-size: 2em;
   margin-bottom: 15px;
-  color: #5a3e2b;
+  color: var(--secondary-color);
 }
 
 h3 {
   font-size: 1.6em;
   margin-bottom: 15px;
+  color: var(--primary-color);
 }
 
 h4 {
   font-size: 1.6em;
   margin-bottom: 15px;
+  color: var(--secondary-color);
 }
 
 h5 {
@@ -44,7 +46,7 @@ h5 {
 }
 
 h6 {
-  font-size: 0.6em;
+  font-size: 1em;
   margin-bottom: 5px;
 }
 
@@ -112,7 +114,7 @@ p {
 .link-box {
   text-align: center;
   width: 200px;
-  background: var(--secondary-color);
+  background: var(#d2b08c);
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
