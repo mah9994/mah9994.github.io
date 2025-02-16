@@ -140,3 +140,21 @@ p {
   height: auto;
   border-radius: 10px;
 }
+
+footer {
+  margin-top: 40px;
+  padding: 10px;
+  background: #333;
+  color: white;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+footer a {
+  color: #f8c471;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
