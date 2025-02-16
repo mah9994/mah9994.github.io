@@ -16,9 +16,8 @@ const tips = document.querySelectorAll('.tip');
 
 tips.forEach(tip => {
   tip.addEventListener('click', () => {
-    // Toggle the description visibility
-    const description = tip.querySelector('.tipDescription');
-    description.style.display = description.style.display === 'block' ? 'none' : 'block';
+    // Toggle the active class to expand/collapse the tip
+    tip.classList.toggle('active');
   });
 });
 
@@ -32,5 +31,4 @@ document.getElementById('submitButton').addEventListener('click', () => {
     alert('Please enter a tip before submitting.');
   }
 });
-
 
