@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
 // Add event listeners for tips
 const tips = document.querySelectorAll('.tip');
 
-document.querySelectorAll('.tip').forEach(tip => {
-  tip.addEventListener('click', () => {
-    // Remove active class from all tips first
-    document.querySelectorAll('.tip').forEach(t => t.classList.remove('active'));
+document.querySelectorAll('.tip-star').forEach(star => {
+  star.addEventListener('click', () => {
+    // Remove active class from all stars first
+    document.querySelectorAll('.tip-star').forEach(s => s.classList.remove('active'));
 
-    // Expand the clicked tip
-    tip.classList.add('active');
-    tip.textContent = tip.getAttribute('data-text'); // Show tip text inside
+    // Expand the clicked star
+    star.classList.add('active');
+    star.querySelector('.tip-text').style.display = 'block'; // Show tip text inside
   });
 });
 
