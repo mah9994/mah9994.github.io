@@ -16,45 +16,34 @@ const tips = document.querySelectorAll('.tip');
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Select all stars
   const stars = document.querySelectorAll('.tip-star');
 
   stars.forEach(star => {
-    star.addEventListener('click', function (event) {
+    star.addEventListener('click', function () {
       // Remove existing description box if any
       const existingBox = document.querySelector('.description-box');
       if (existingBox) {
         existingBox.remove();
       }
 
-      // Create description box
+      // Create a new description box
       const descriptionBox = document.createElement('div');
       descriptionBox.classList.add('description-box');
-      descriptionBox.textContent = star.getAttribute('data-text');
+      descriptionBox.textContent = star.getAttribute('data-text');  // Use the star's data-text as the description
 
-      // Position the description box near the clicked star
-      const rect = star.getBoundingClientRect();
-      descriptionBox.style.position = 'absolute';
-      descriptionBox.style.left = `${rect.left + window.scrollX + 30}px`; // Adjust position
-      descriptionBox.style.top = `${rect.top + window.scrollY}px`;
-      descriptionBox.style.padding = '10px';
-      descriptionBox.style.background = 'gold';
-      descriptionBox.style.border = '2px solid black';
-      descriptionBox.style.borderRadius = '10px';
-      descriptionBox.style.boxShadow = '2px 2px 10px rgba(0,0,0,0.2)';
-      descriptionBox.style.cursor = 'pointer';
-      
-      // Append to body
+      // Append the description box to the body
       document.body.appendChild(descriptionBox);
 
-      // Remove box on click
+      // Show the description box
+      descriptionBox.style.display = 'block';
+
+      // Add event listener to remove description box when clicked
       descriptionBox.addEventListener('click', function () {
         descriptionBox.remove();
       });
     });
   });
 });
-
 
 
 

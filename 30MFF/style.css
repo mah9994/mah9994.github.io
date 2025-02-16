@@ -253,3 +253,23 @@ footer a:hover {
   display: block;
   opacity: 1;
 }
+
+/* Add a new class for the description box */
+.description-box {
+  position: absolute;
+  background-color: rgba(255, 215, 0, 0.8); /* Semi-transparent gold background */
+  color: black;
+  padding: 30px;
+  font-size: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999; /* Ensure it appears on top of other elements */
+  display: none; /* Initially hidden */
+  cursor: pointer;
+  text-align: center;
+  width: 50%; /* Adjust the width of the description box */
+  max-width: 600px; /* Maximum width */
+  left: 50%; /* Center the box horizontally */
+  top: 50%; /* Position box vertically */
+  transform: translate(-50%, -50%); /* Centering */
+}
