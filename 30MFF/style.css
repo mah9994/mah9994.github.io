@@ -9,7 +9,7 @@
 body {
   position: relative;
   overflow: auto;
-  font-family: Allura, Apple Chancery, Brush Script, Lobster, Pacifico, cursive, Arial, sans-serif;
+  font-family: Satisfy, Apple Chancery, "Brush Script", Lobster, Pacifico, cursive, Arial, sans-serif;
   text-align: center;
   background: var(--background-gradient);
   padding: 20px;
