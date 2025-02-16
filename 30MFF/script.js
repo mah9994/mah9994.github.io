@@ -16,10 +16,22 @@ const tips = document.querySelectorAll('.tip');
 
 tips.forEach(tip => {
   tip.addEventListener('click', () => {
-    // Toggle the active class to expand/collapse the tip
-    tip.classList.toggle('active');
+    if (tip.classList.contains('active')) {
+      // Shrink back to star shape
+      tip.classList.remove('active');
+      tip.style.clipPath = "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)";
+      tip.style.width = "80px";
+      tip.style.height = "80px";
+    } else {
+      // Expand and remove star shape
+      tip.classList.add('active');
+      tip.style.clipPath = "none";
+      tip.style.width = "80vw";
+      tip.style.height = "80vh";
+    }
   });
 });
+
 
 // Handle form submission for user-generated tips
 document.getElementById('submitButton').addEventListener('click', () => {
@@ -32,6 +44,9 @@ document.getElementById('submitButton').addEventListener('click', () => {
   }
 });
 
+
+
+// for background yellow stars
 document.addEventListener("DOMContentLoaded", function () {
   // Function to generate random stars
   // Function to generate random stars
