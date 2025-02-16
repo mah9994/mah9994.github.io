@@ -1,3 +1,4 @@
+// For alumni stories section
 document.addEventListener("DOMContentLoaded", function () {
   // Select all alumni cards
   const alumniCards = document.querySelectorAll(".alumni-card");
@@ -10,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
 
 // Add event listeners for tips
 const tips = document.querySelectorAll('.tip');
@@ -35,7 +37,7 @@ document.getElementById('submitButton').addEventListener('click', () => {
 
 
 
-// for background yellow stars effect
+// For background yellow stars effect
 document.addEventListener("DOMContentLoaded", function () {
   // Function to generate random stars
   function createStar() {
