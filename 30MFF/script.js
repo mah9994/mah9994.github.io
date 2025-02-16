@@ -34,12 +34,13 @@ document.getElementById('submitButton').addEventListener('click', () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Function to generate random stars
+  // Function to generate random stars
   function createStar() {
     const star = document.createElement("div");
     star.classList.add("star");
 
     // Randomize size, position, and animation timing
-    const size = Math.random() * 4 + 1; // Star size between 1 and 5px
+    const size = Math.random() * 20 + 5; // Increase size between 5px and 25px
     star.style.width = `${size}px`;
     star.style.height = `${size}px`;
     star.style.top = `${Math.random() * window.innerHeight}px`; // Random vertical position
@@ -54,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
       star.remove();
     }, 2000);
   }
+
 
   // Create stars every 100ms
   setInterval(createStar, 100);
