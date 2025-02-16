@@ -179,6 +179,7 @@ p {
   border-radius: 10px;
 }
 
+/* for footer section */
 footer {
   margin-top: 40px;
   padding: 10px;
@@ -197,6 +198,8 @@ footer a:hover {
   text-decoration: underline;
 }
 
+
+/* for tips section */
 #tipList {
   list-style-type: none;
   padding: 0;
