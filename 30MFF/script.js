@@ -5,10 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add click event to each card
   alumniCards.forEach((card) => {
     card.addEventListener("click", function () {
-      let cardInner = card.querySelector(".card-inner");
-
-      // Toggle the 'flipped' class to rotate the card
-      cardInner.classList.toggle("flipped");
+      // Toggle the 'flipped' class on the alumni card itself
+      card.classList.toggle("flipped");
     });
   });
 });
