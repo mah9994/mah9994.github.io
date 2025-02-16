@@ -10,3 +10,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Add event listeners for tips
+const tips = document.querySelectorAll('.tip');
+
+tips.forEach(tip => {
+  tip.addEventListener('click', () => {
+    // Toggle the active class to expand/collapse the tip
+    tip.classList.toggle('active');
+  });
+});
+
+// Handle form submission for user-generated tips
+document.getElementById('submitButton').addEventListener('click', () => {
+  const userTip = document.getElementById('userTip').value;
+  if (userTip) {
+    alert('Thank you for submitting your tip!');
+    document.getElementById('userTip').value = '';  // Clear the text area after submission
+  } else {
+    alert('Please enter a tip before submitting.');
+  }
+});
+

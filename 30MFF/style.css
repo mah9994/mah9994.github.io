@@ -167,13 +167,31 @@ footer a:hover {
 }
 
 .tip {
+  position: relative;
   background-color: #fff;
-  padding: 15px;
+  padding: 20px;
   margin: 10px 0;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  text-align: center;
+  color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+.tip::before {
+  content: '☆'; /* Star symbol */
+  font-size: 50px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.tip:hover::before {
+  transform: scale(1.3);
 }
 
 .tip:hover {
