@@ -14,23 +14,17 @@ document.addEventListener("DOMContentLoaded", function () {
 // Add event listeners for tips
 const tips = document.querySelectorAll('.tip');
 
-tips.forEach(tip => {
+document.querySelectorAll('.tip').forEach(tip => {
   tip.addEventListener('click', () => {
-    if (tip.classList.contains('active')) {
-      // Shrink back to star shape
-      tip.classList.remove('active');
-      tip.style.clipPath = "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)";
-      tip.style.width = "80px";
-      tip.style.height = "80px";
-    } else {
-      // Expand and remove star shape
-      tip.classList.add('active');
-      tip.style.clipPath = "none";
-      tip.style.width = "80vw";
-      tip.style.height = "80vh";
-    }
+    // Remove active class from all tips first
+    document.querySelectorAll('.tip').forEach(t => t.classList.remove('active'));
+
+    // Expand the clicked tip
+    tip.classList.add('active');
+    tip.textContent = tip.getAttribute('data-text'); // Show tip text inside
   });
 });
+
 
 
 // Handle form submission for user-generated tips
