@@ -213,10 +213,9 @@ p {
   margin: 0 auto;
 }
 
-
 .tip {
   position: relative;
-  background-color: #fff;
+  background-color: #f8f9fa; /* Light background to match the overall style */
   padding: 20px;
   margin: 10px 0;
   border-radius: 5px;
@@ -224,13 +223,12 @@ p {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   text-align: center;
-  color: #444;
+  color: #5a3e2b; /* A dark brownish color */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 150px;
 }
-
 
 .tip::before {
   content: '☆'; /* Star symbol */
@@ -239,34 +237,28 @@ p {
   transition: transform 0.3s ease;
 }
 
-
 .tip:hover::before {
   transform: scale(1.3);
 }
 
-
 .tip:hover {
-  background-color: #ff4500;
+  background-color: #4b0082; /* Dark blue color */
   color: white;
 }
 
-
 .tip.active {
-  background-color: #f4f4f9;
-  color: #444;
+  background-color: #d2b08c; /* Light brownish color */
+  color: #5a3e2b; /* Dark brown text */
 }
-
 
 .tip p {
   display: none;
   margin-top: 10px;
 }
 
-
 .tip.active p {
   display: block;
 }
-
 
 #tipForm {
   background-color: #fff;
@@ -276,7 +268,6 @@ p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
 #tipForm textarea {
   width: 100%;
   padding: 10px;
@@ -285,9 +276,8 @@ p {
   border: 1px solid #ccc;
 }
 
-
 #tipForm button {
-  background-color: #ff4500;
+  background-color: #4b0082; /* Dark blue for button */
   color: white;
   padding: 10px;
   border: none;
@@ -295,9 +285,8 @@ p {
   cursor: pointer;
 }
 
-
 #tipForm button:hover {
-  background-color: #ff6a00;
+  background-color: #3a007a; /* Slightly darker blue for hover */
 }
 
 /* for footer section */
