@@ -6,7 +6,9 @@
 }
 
 body {
-  font-family: Apple Chancery , Brush Script, Lobster, Pacifico, cursive, Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  font-family: Apple Chancery, Brush Script, Lobster, Pacifico, cursive, Arial, sans-serif;
   text-align: center;
   background: var(--background-gradient);
   padding: 20px;
@@ -41,6 +43,41 @@ p {
 
 .video-section {
   margin: 20px auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* for background */
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background-color: yellow;
+  opacity: 0;
+  animation: sparkle 1.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Adjust the speed and size of the stars */
+.star:nth-child(even) {
+  animation-duration: 1.5s;
+}
+.star:nth-child(odd) {
+  animation-duration: 2s;
 }
 
 .links-container {

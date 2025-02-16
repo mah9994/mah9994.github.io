@@ -32,3 +32,29 @@ document.getElementById('submitButton').addEventListener('click', () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to generate random stars
+  function createStar() {
+    const star = document.createElement("div");
+    star.classList.add("star");
+
+    // Randomize size, position, and animation timing
+    const size = Math.random() * 4 + 1; // Star size between 1 and 5px
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+    star.style.top = `${Math.random() * window.innerHeight}px`; // Random vertical position
+    star.style.left = `${Math.random() * window.innerWidth}px`; // Random horizontal position
+    star.style.animationDuration = `${Math.random() * 1.5 + 1}s`; // Random animation duration between 1s and 2.5s
+
+    // Append the star to the body
+    document.body.appendChild(star);
+
+    // Remove the star after animation ends (so they don't stay forever)
+    setTimeout(() => {
+      star.remove();
+    }, 2000);
+  }
+
+  // Create stars every 100ms
+  setInterval(createStar, 100);
+});
