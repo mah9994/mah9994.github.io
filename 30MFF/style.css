@@ -187,7 +187,7 @@ p {
 }
 
 .card-front {
-  background: #f8f9fa;
+  background: #c5e0f7;
 }
 
 .card-back {
@@ -218,7 +218,7 @@ p {
 
 .tip {
   position: relative;
-  background-color: #f8f9fa; /* Light background to match the overall style */
+  background-color: #c5e0f7;
   padding: 20px;
   margin: 10px 0;
   border-radius: 5px;
