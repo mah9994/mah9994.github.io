@@ -13,12 +13,12 @@ The development of the "Morning Routine at NYUAD" project involved a comprehensi
 
 ### 1. **Research & Conceptualization**  
 The first step in the project was to identify the key challenges NYUAD students face in their morning routines. Through discussions and research, it became clear that many students experience a sense of monotony in their mornings, with some struggling to find motivation or establish a productive routine. We aimed to address these challenges by providing solutions that encouraged mindfulness, self-care, and small habit changes.  
-During this phase, we also researched various resources, including tips on productivity, motivation, and morning wellness. Additionally, we sought success stories from NYUAD alumni to inspire and motivate current students, helping them see how others overcome similar challenges.
+During this phase, I also researched various resources, including tips on productivity, motivation, and morning wellness. Additionally, I used success stories from the NYUAD website to inspire and motivate current students, helping them see how others overcome similar challenges.
 
 ### 2. **Content Creation**  
 With the concept in mind, the next phase involved curating content that would resonate with students.  
 - **Morning Hacks**: A collection of practical tips was gathered to help students optimize their morning routines. These tips focused on small changes to their habits, such as how to wake up feeling energized, the benefits of meditation or stretching, and how to create a calming environment.
-- **Success Stories**: I reached out to a few NYUAD alumni who shared their personal morning routines, providing valuable insights and inspiration for students.
+- **Success Stories**: I utilized the NYUAD website to find success stories of alumni who shared their personal morning routines, providing valuable insights and inspiration for students.
 - **Video Creation**: A video was created to visualize the typical morning struggles faced by students and to promote the concept of transforming one’s morning for a more productive and positive day. This video was shot in collaboration with two other students and served as an engaging introduction to the project. It set the tone for the rest of the site by depicting the challenges and potential solutions for students.
 
 ### 3. **Web Development**  
