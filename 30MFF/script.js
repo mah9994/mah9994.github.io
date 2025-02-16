@@ -15,37 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
 const tips = document.querySelectorAll('.tip');
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  const stars = document.querySelectorAll('.tip-star');
-
-  stars.forEach(star => {
-    star.addEventListener('click', function () {
-      // Remove existing description box if any
-      const existingBox = document.querySelector('.description-box');
-      if (existingBox) {
-        existingBox.remove();
-      }
-
-      // Create a new description box
-      const descriptionBox = document.createElement('div');
-      descriptionBox.classList.add('description-box');
-      descriptionBox.textContent = star.getAttribute('data-text');  // Use the star's data-text as the description
-
-      // Append the description box to the body
-      document.body.appendChild(descriptionBox);
-
-      // Show the description box
-      descriptionBox.style.display = 'block';
-
-      // Add event listener to remove description box when clicked
-      descriptionBox.addEventListener('click', function () {
-        descriptionBox.remove();
-      });
-    });
+tips.forEach(tip => {
+  tip.addEventListener('click', () => {
+    // Toggle the active class to expand/collapse the tip
+    tip.classList.toggle('active');
   });
 });
-
-
 
 // Handle form submission for user-generated tips
 document.getElementById('submitButton').addEventListener('click', () => {
