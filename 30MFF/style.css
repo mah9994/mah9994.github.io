@@ -256,8 +256,10 @@ p {
 }
 
 .tip.active {
-  background: #ffe9e3;
-  color: #444;
+  background: linear-gradient(135deg, #ffcc70, #ff9a9e);
+  color: #333;
+  box-shadow: 0 4px 12px rgba(255, 153, 102, 0.3);
+  border: 2px solid #ff6b6b;
 }
 
 #tipForm {
