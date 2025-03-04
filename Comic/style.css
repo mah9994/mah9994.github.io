@@ -1,168 +1,170 @@
 body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: black;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*transition: background-image 0.5s ease-in-out;*/
 }
 
 .comic-container {
-  position: relative;
-  text-align: center;
+    position: relative;
+    text-align: center;
 }
 
-.interactive-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* Allow clicks to pass through to the container */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
 }
 
 #title {
-  position: absolute;
-  top: 10%;
-  width: 100%;
-  text-align: center;
-  font-size: 2rem;
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  pointer-events: auto; /* So title is still clickable if needed */
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
 }
 
 #panel {
-  width: 90vw;
-  height: 90vh;
-  object-fit: contain;
-  display: block;
-  margin: auto;
+    width: 90vw;
+    height: 90vh;
+    object-fit: contain;
+    display: block;
+    margin: auto;
 }
 
 .nav-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  border: none;
-  font-size: 2rem;
-  padding: 10px 20px;
-  cursor: pointer;
-  pointer-events: auto; /* Ensure buttons can be clicked */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
 .left {
-  left: 10px;
+    left: 10px;
 }
 
 .right {
-  right: 10px;
+    right: 10px;
 }
 
 .nav-button:hover {
-  background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.3);
 }
+
+
+
+
+
 
 /* General speech bubble style */
 .speech-bubble {
-  position: absolute;
-  background: white;
-  padding: 15px;
-  border-radius: 20px;
-  font-size: 1.2rem;
-  max-width: 250px;
-  text-align: center;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  transform: scale(0.8);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    position: absolute;
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    max-width: 250px;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Hidden by default */
+    transform: scale(0.8); /* Slightly smaller initially */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
+/* Speech bubble arrow (cloud effect) */
 .speech-bubble::after {
-  content: "";
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  width: 30px;
-  height: 20px;
-  background: white;
-  clip-path: ellipse(50% 60% at 50% 50%);
+    content: "";
+    position: absolute;
+    bottom: -15px; /* Positioned below */
+    left: 50%;
+    width: 30px;
+    height: 20px;
+    background: white;
+    clip-path: ellipse(50% 60% at 50% 50%); /* Cloud-like effect */
 }
 
-/* Panel 1 speech bubble positions */
+/* First speech bubble (thinking) */
 #speech1 {
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
+/* Second speech bubble (mocking from left) */
 #speech2 {
-  top: 40%;
-  left: 5%;
+    top: 40%;
+    left: 5%;
 }
 
 /* Crumpled Paper Animation */
 .crumpled-paper {
-  position: absolute;
-  top: 30%;
-  left: -50px;
-  width: 50px;
-  height: 50px;
-  transform: rotate(-20deg);
-  transition: transform 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out;
+    position: absolute;
+    top: 30%; /* Start higher */
+    left: -50px; /* Start off-screen */
+    width: 50px;
+    height: 50px;
+    transform: rotate(-20deg);
+    transition: transform 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out;
 }
 
-/* Hidden and visible states */
+/* Hidden state */
 .hidden {
-  display: block;
-  opacity: 0;
-  transform: scale(0.8);
+    display: block;
+    opacity: 0;
+    transform: scale(0.8);
 }
 
+/* Visible state */
 .visible {
-  opacity: 1;
-  transform: scale(1);
+    opacity: 1;
+    transform: scale(1);
 }
+
+/* Falling effect for the crumpled paper */
+@keyframes tossPaper {
+    0% { left: -50px; top: 30%; transform: rotate(0deg); }
+    50% { left: 50%; top: 45%; transform: rotate(180deg); }
+    100% { left: 55%; top: 90%; transform: rotate(250deg); }
+}
+
 
 /* Panel 2 elements styling */
 .panel2-element {
-  position: absolute;
-  transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 
-/* Positioning for Panel 2 elements */
-#oxygen {
-  /* Initially, Oxygen is on the right side of the panel */
-  right: 10%;
-  top: 40%;
-}
-
-#beryllium {
-  /* Beryllium will animate from off-screen (left) to stand next to Oxygen */
-  left: -100px;
-  top: 40%;
-}
-
-/* Speech bubbles for panel 2 */
+/* Panel 2 speech bubble positions */
 #speech3 {
-  top: 30%;
-  left: 55%;
+    top: 30%;
+    left: 55%;
 }
 
 #speech4 {
-  top: 30%;
-  right: 15%;
+    top: 30%;
+    right: 15%;
 }
 
 #speech5 {
-  top: 30%;
-  left: 55%;
+    top: 30%;
+    left: 55%;
 }
