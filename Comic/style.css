@@ -148,12 +148,12 @@ body {
 }
 
 
-/* Panel 2 elements styling 
+/* Panel 2 elements styling */
 .panel2-element {
     transition: all 1s ease-in-out;
 }
 
- Panel 2 speech bubble positions 
+/* Panel 2 speech bubble positions */
 #speech3 {
     top: 30%;
     left: 55%;
@@ -167,4 +167,4 @@ body {
 #speech5 {
     top: 30%;
     left: 55%;
-}*/
+}
