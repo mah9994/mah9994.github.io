@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beryllium Oxide (BeO) Comic</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beryllium Oxide (BeO) Comic</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="comic-container" onclick="handleClick()">
-        <h1 id="title">Beryllium Oxide (BeO)</h1>
-        <img id="panel" src="page1.png" alt="Comic Panel">
-        
-        <!-- Panel 1 Interactive Elements -->
-        <div id="speech1" class="speech-bubble hidden">"Why am I like this? Why does no one like me?"</div>
-        <img id="paper" src="paper.png" class="hidden crumpled-paper">
-        <div id="speech2" class="speech-bubble left hidden">"Haha, Beryllium, no one even wants to talk to you!"</div>
+  <div class="comic-container" onclick="handleClick()">
+    <h1 id="title">Beryllium Oxide (BeO)</h1>
+    <img id="panel" src="page1.png" alt="Comic Panel">
 
-        
-        <button id="prev" class="nav-button left" onclick="prevPanel()">&#9665;</button>
-        <button id="next" class="nav-button right" onclick="nextPanel()">&#9655;</button>
-    </div>
-    <script src="script.js"></script>
+    <!-- Panel 1 Interactive Elements -->
+    <div id="speech1" class="speech-bubble hidden">"Why am I like this? Why does no one like me?"</div>
+    <img id="paper" src="paper.png" class="hidden crumpled-paper">
+    <div id="speech2" class="speech-bubble left hidden">"Haha, Beryllium, no one even wants to talk to you!"</div>
+
+    <!-- Panel 2 Interactive Elements -->
+    <!-- Oxygen is already in place -->
+    <img id="oxygen" src="oxygen.png" class="panel2-element hidden">
+    <!-- Beryllium enters from the left -->
+    <img id="beryllium" src="beryllium.png" class="panel2-element hidden">
+    <!-- Speech bubbles with text defined in HTML -->
+    <div id="speech3" class="speech-bubble hidden">"Hey, I’m Oxygen! Well, you know me already…"</div>
+    <div id="speech4" class="speech-bubble hidden">"Leave me alone. I don't want to talk."</div>
+    <div id="speech5" class="speech-bubble hidden">"No worries, I just wanted us to get to know each other!"</div>
+
+    <button id="prev" class="nav-button left" onclick="prevPanel(event)">&#9665;</button>
+    <button id="next" class="nav-button right" onclick="nextPanel(event)">&#9655;</button>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
