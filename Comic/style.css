@@ -7,6 +7,8 @@ body {
     height: 100vh;
     background-color: black;
     background-size: cover;
+    height: 100vh;
+    width: 100vw;
 }
 
 .comic-container {
