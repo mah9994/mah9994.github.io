@@ -146,3 +146,25 @@ body {
     50% { left: 50%; top: 45%; transform: rotate(180deg); }
     100% { left: 55%; top: 90%; transform: rotate(250deg); }
 }
+
+
+/* Panel 2 elements styling */
+.panel2-element {
+    transition: all 1s ease-in-out;
+}
+
+/* Panel 2 speech bubble positions */
+#speech3 {
+    top: 30%;
+    left: 55%;
+}
+
+#speech4 {
+    top: 30%;
+    right: 15%;
+}
+
+#speech5 {
+    top: 30%;
+    left: 55%;
+}
