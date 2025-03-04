@@ -151,7 +151,7 @@ body {
 /* Panel 2 elements styling */
 .panel2-element {
     transition: all 1s ease-in-out;
-    z-index: 10
+    z-index: 10;
 }
 
 /* Panel 2 speech bubble positions */
