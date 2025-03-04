@@ -105,6 +105,9 @@ function handleClick() {
             // Reveal the speech bubble from Beryllium (Oxygen's dialogue).
             document.getElementById("speech3").classList.remove("hidden");
             document.getElementById("speech3").classList.add("visible");
+
+            document.getElementById("panel2-element").classList.remove("hidden");
+            document.getElementById("panel2-element").classList.add("visible");
         } else if (secondPanelClickCount === 3) {
             // Reveal the speech bubble from Oxygen (Beryllium's dialogue).
             document.getElementById("speech4").classList.remove("hidden");
