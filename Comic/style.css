@@ -19,7 +19,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    object-fit: cover; /* Ensures it covers the entire screen */
+    object-fit: cover;
     z-index: -1;
 }
 
@@ -35,9 +35,11 @@ body {
 }
 
 #panel {
-    max-width: 100%;
-    height: auto;
+    width: 90vw;
+    height: 90vh;
+    object-fit: contain;
     display: block;
+    margin: auto;
 }
 
 .nav-button {
