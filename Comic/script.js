@@ -1,4 +1,4 @@
-let currentPanel = 1;
+let currentPanel = 1; 
 const totalPanels = 6;
 let firstPanelClickCount = 0;
 let secondPanelClickCount = 0;
@@ -6,8 +6,6 @@ let secondPanelClickCount = 0;
 function updatePanel() {
     document.getElementById("panel").src = `page${currentPanel}.png`;
     document.getElementById("title").style.display = currentPanel === 1 ? "block" : "none";
-
-    // Dynamically change the background image.
     document.body.style.backgroundImage = `url('background${currentPanel}.png')`;
 
     if (currentPanel === 1) {
@@ -37,7 +35,7 @@ function updatePanel() {
 
         // Setup Beryllium off-screen to the left.
         let beryllium = document.getElementById("beryllium");
-        beryllium.style.display = "none";
+        beryllium.style.display = "none"; // Hide until click.
         beryllium.style.position = "absolute";
         beryllium.style.left = "-100px";
         beryllium.style.top = "40%";  // Align vertically with Oxygen.
@@ -59,7 +57,7 @@ function updatePanel() {
 }
 
 function nextPanel(e) {
-    e.stopPropagation(); // Prevent triggering handleClick.
+    e.stopPropagation();
     if (currentPanel < totalPanels) {
         currentPanel++;
         updatePanel();
@@ -95,22 +93,22 @@ function handleClick() {
         secondPanelClickCount++;
 
         if (secondPanelClickCount === 1) {
-            // Beryllium enters from the left to stand left of Oxygen.
+            // First click on panel 2: animate Beryllium into view.
             let beryllium = document.getElementById("beryllium");
             beryllium.style.display = "block";
             beryllium.style.transition = "left 1s ease-in-out";
-            // Adjust the target left position as needed.
-            beryllium.style.left = "60%";
+            // Move Beryllium to a position just left of Oxygen.
+            beryllium.style.left = "60%";  // Adjust this value as needed.
         } else if (secondPanelClickCount === 2) {
-            // Reveal the speech bubble from Beryllium (Oxygen's dialogue).
+            // Second click: show speech bubble from Beryllium (Oxygen's dialogue).
             document.getElementById("speech3").classList.remove("hidden");
             document.getElementById("speech3").classList.add("visible");
         } else if (secondPanelClickCount === 3) {
-            // Reveal the speech bubble from Oxygen (Beryllium's dialogue).
+            // Third click: show speech bubble from Oxygen (Beryllium's dialogue).
             document.getElementById("speech4").classList.remove("hidden");
             document.getElementById("speech4").classList.add("visible");
         } else if (secondPanelClickCount === 4) {
-            // Reveal the final speech bubble from Beryllium (Oxygen's awkward reply).
+            // Fourth click: show final speech bubble from Beryllium (Oxygen's awkward reply).
             document.getElementById("speech5").classList.remove("hidden");
             document.getElementById("speech5").classList.add("visible");
         }
