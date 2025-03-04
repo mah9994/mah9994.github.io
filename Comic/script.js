@@ -6,7 +6,7 @@ function updatePanel() {
     document.getElementById("panel").src = `page${currentPanel}.png`;
     document.getElementById("title").style.display = currentPanel === 1 ? "block" : "none";
 
-    // Change background image dynamically
+    // Change background image dynamicallyyy
     document.body.style.backgroundImage = `url('background${currentPanel}.png')`;
 
     // Reset interactions for panel 1
