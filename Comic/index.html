@@ -7,10 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="comic-container">
+    <div class="comic-container" onclick="handleClick()">
         <img src="background.png" alt="Background" class="background">
         <h1 id="title">Beryllium Oxide (BeO)</h1>
         <img id="panel" src="page1.png" alt="Comic Panel">
+        
+        <!-- Interactive elements for the first page -->
+        <div id="speech1" class="speech-bubble hidden">"Why am I like this? Why does no one like me?"</div>
+        <img id="paper" src="paper.png" class="hidden crumpled-paper">
+        <div id="speech2" class="speech-bubble left hidden">"Haha, Beryllium, no one even wants to talk to you!"</div>
+
         <button id="prev" class="nav-button left" onclick="prevPanel()">&#9665;</button>
         <button id="next" class="nav-button right" onclick="nextPanel()">&#9655;</button>
     </div>
