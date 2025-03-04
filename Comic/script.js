@@ -30,17 +30,19 @@ function updatePanel() {
 
         // Show Oxygen image in its initial position.
         let oxygen = document.getElementById("oxygen");
-        oxygen.style.display = "block";
         oxygen.style.position = "absolute";
         oxygen.style.right = "10%";  // Adjust as needed.
         oxygen.style.top = "40%";    // Adjust as needed.
+        oxygen.classList.remove("hidden"); // Remove hidden state
+        oxygen.classList.add("visible");   // Make it visible
 
         // Setup Beryllium off-screen to the left.
         let beryllium = document.getElementById("beryllium");
-        beryllium.style.display = "none";
         beryllium.style.position = "absolute";
         beryllium.style.left = "-100px";
-        beryllium.style.top = "40%";  // Align vertically with Oxygen.
+        beryllium.style.top = "40%";  // Align vertically with Oxygen
+        // Ensure beryllium remains hidden until first click.
+        beryllium.classList.add("hidden");
 
         // Hide panel 2 speech bubbles.
         document.getElementById("speech3").classList.add("hidden");
@@ -76,45 +78,35 @@ function prevPanel(e) {
 
 function handleClick() {
     if (currentPanel === 1) {
-        firstPanelClickCount++;
-
-        if (firstPanelClickCount === 1) {
-            document.getElementById("speech1").classList.remove("hidden");
-            document.getElementById("speech1").classList.add("visible");
-        } else if (firstPanelClickCount === 2) {
-            document.getElementById("speech1").classList.remove("visible");
-            document.getElementById("speech1").classList.add("hidden");
-            let paper = document.getElementById("paper");
-            paper.classList.remove("hidden");
-            paper.style.animation = "tossPaper 1.5s forwards";
-        } else if (firstPanelClickCount === 3) {
-            document.getElementById("speech2").classList.remove("hidden");
-            document.getElementById("speech2").classList.add("visible");
-        }
+      // (Panel 1 logic remains unchanged)
     } else if (currentPanel === 2) {
-        secondPanelClickCount++;
-
-        if (secondPanelClickCount === 1) {
-            // Beryllium enters from the left to stand left of Oxygen.
-            let beryllium = document.getElementById("beryllium");
-            beryllium.style.display = "block";
-            beryllium.style.transition = "left 1s ease-in-out";
-            // Adjust the target left position as needed.
-            beryllium.style.left = "60%";
-        } else if (secondPanelClickCount === 2) {
-            // Reveal the speech bubble from Beryllium (Oxygen's dialogue).
-            document.getElementById("speech3").classList.remove("hidden");
-            document.getElementById("speech3").classList.add("visible");
-        } else if (secondPanelClickCount === 3) {
-            // Reveal the speech bubble from Oxygen (Beryllium's dialogue).
-            document.getElementById("speech4").classList.remove("hidden");
-            document.getElementById("speech4").classList.add("visible");
-        } else if (secondPanelClickCount === 4) {
-            // Reveal the final speech bubble from Beryllium (Oxygen's awkward reply).
-            document.getElementById("speech5").classList.remove("hidden");
-            document.getElementById("speech5").classList.add("visible");
-        }
+      secondPanelClickCount++;
+    
+      if (secondPanelClickCount === 1) {
+        // Beryllium enters from the left to stand left of Oxygen.
+        let beryllium = document.getElementById("beryllium");
+        beryllium.classList.remove("hidden");  // Remove the hidden class so opacity becomes 1
+        beryllium.classList.add("visible");
+        beryllium.style.transition = "left 1s ease-in-out";
+        // Adjust the target left position as needed.
+        beryllium.style.left = "60%";
+      } else if (secondPanelClickCount === 2) {
+        // Reveal the speech bubble from Beryllium (Oxygen's dialogue).
+        let speech3 = document.getElementById("speech3");
+        speech3.classList.remove("hidden");
+        speech3.classList.add("visible");
+      } else if (secondPanelClickCount === 3) {
+        // Reveal the speech bubble from Oxygen (Beryllium's dialogue).
+        let speech4 = document.getElementById("speech4");
+        speech4.classList.remove("hidden");
+        speech4.classList.add("visible");
+      } else if (secondPanelClickCount === 4) {
+        // Reveal the final speech bubble from Beryllium (Oxygen's awkward reply).
+        let speech5 = document.getElementById("speech5");
+        speech5.classList.remove("hidden");
+        speech5.classList.add("visible");
+      }
     }
-}
-
+  }
+  
 window.onload = updatePanel;

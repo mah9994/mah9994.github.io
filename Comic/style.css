@@ -168,3 +168,14 @@ body {
     top: 30%;
     left: 55%;
 }
+
+.interactive-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to pass through */
+    z-index: 10; /* Ensure overlay (and its children) are on top */
+  }
+  
