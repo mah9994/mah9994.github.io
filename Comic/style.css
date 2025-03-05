@@ -186,6 +186,7 @@ body {
     left: 35%;
 }
 
+/*panel 3*/
 #speech6 {
     top: 30%;
     right: 15%;
@@ -197,6 +198,54 @@ body {
 }
 
 #speech8 {
+    top: 30%;
+    right: 15%;
+}
+
+/*panel 4*/
+#speech9 {
+    top: 30%;
+    right: 15%;
+}
+
+#speech10 {
+    top: 30%;
+    left: 35%;
+}
+
+#speech11 {
+    top: 30%;
+    right: 15%;
+}
+
+/*panel 5*/
+#speech12 {
+    top: 30%;
+    left: 35%;
+}
+
+#speech13 {
+    top: 30%;
+    right: 15%;
+}
+
+#speech14 {
+    top: 30%;
+    left: 35%;
+}
+
+/*panel 6*/
+#speech15 {
+    top: 30%;
+    right: 15%;
+}
+
+#speech16 {
+    top: 30%;
+    left: 35%;
+}
+
+#speech17 {
     top: 30%;
     right: 15%;
 }
