@@ -162,12 +162,12 @@ body {
   
   /* When oxygen should move in, add this class */
   .oxygen-in {
-    left: 40%; /* target position for Oxygen */
+    left: 20%; /* target position for Oxygen */
   }
   
   /* When beryllium should move in, add this class */
   .beryllium-in {
-    left: 20%; /* target position for Beryllium */
+    left: 40%; /* target position for Beryllium */
   }
 
 /* Panel 2 speech bubble positions */

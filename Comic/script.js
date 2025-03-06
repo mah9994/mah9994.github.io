@@ -82,14 +82,14 @@ function updatePanel() {
         let oxygen = document.getElementById("oxygen");
         oxygen.style.display = "block";
         oxygen.style.position = "absolute";
-        oxygen.style.right = "10%";  // Adjust as needed.
+        oxygen.style.right = "100%";  // Adjust as needed.
         oxygen.style.top = "40%";    // Adjust as needed.
 
         // Setup Beryllium off-screen to the left.
         let beryllium = document.getElementById("beryllium");
         beryllium.style.display = "block";
         beryllium.style.position = "absolute";
-        beryllium.style.left = "10%";
+        beryllium.style.left = "100%";
         beryllium.style.top = "40%";  // Align vertically with Oxygen.
 
         // Hide panel 2 speech bubbles.
@@ -126,14 +126,14 @@ function updatePanel() {
         let oxygen = document.getElementById("oxygen");
         oxygen.style.display = "block";
         oxygen.style.position = "absolute";
-        oxygen.style.right = "10%";  // Adjust as needed.
+        oxygen.style.right = "100%";  // Adjust as needed.
         oxygen.style.top = "40%";    // Adjust as needed.
 
         // Setup Beryllium off-screen to the left.
         let beryllium = document.getElementById("beryllium");
         beryllium.style.display = "block";
         beryllium.style.position = "absolute";
-        beryllium.style.left = "10%";
+        beryllium.style.left = "100%";
         beryllium.style.top = "40%";  // Align vertically with Oxygen.
 
         // Hide panel 2 speech bubbles.
@@ -171,14 +171,14 @@ function updatePanel() {
         let oxygen = document.getElementById("oxygen");
         oxygen.style.display = "block";
         oxygen.style.position = "absolute";
-        oxygen.style.right = "10%";  // Adjust as needed.
+        oxygen.style.right = "100%";  // Adjust as needed.
         oxygen.style.top = "40%";    // Adjust as needed.
 
         // Setup Beryllium off-screen to the left.
         let beryllium = document.getElementById("beryllium");
         beryllium.style.display = "block";
         beryllium.style.position = "absolute";
-        beryllium.style.left = "10%";
+        beryllium.style.left = "100%";
         beryllium.style.top = "40%";  // Align vertically with Oxygen.
 
         // Hide panel 2 speech bubbles.
@@ -215,14 +215,14 @@ function updatePanel() {
         let oxygen = document.getElementById("oxygen");
         oxygen.style.display = "block";
         oxygen.style.position = "absolute";
-        oxygen.style.right = "10%";  // Adjust as needed.
+        oxygen.style.right = "100%";  // Adjust as needed.
         oxygen.style.top = "40%";    // Adjust as needed.
 
         // Setup Beryllium off-screen to the left.
         let beryllium = document.getElementById("beryllium");
         beryllium.style.display = "block";
         beryllium.style.position = "absolute";
-        beryllium.style.left = "10%";
+        beryllium.style.left = "100%";
         beryllium.style.top = "40%";  // Align vertically with Oxygen.
 
         // Hide panel 2 speech bubbles.
