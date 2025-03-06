@@ -149,14 +149,31 @@ body {
 
 
 /* Panel 2 elements styling */
+
 .panel2-element {
-    transition: all 1s ease-in-out;
-}
+    position: absolute;
+    top: 40%; /* common vertical position */
+    /* Set initial horizontal position off-screen (adjust units consistently) */
+    left: -100px;  
+    width: 350px;
+    height: 350px;
+    transition: left 1s ease-in-out; /* animate changes to the left property */
+  }
+  
+  /* When oxygen should move in, add this class */
+  .oxygen-in {
+    left: 20%; /* target position for Oxygen */
+  }
+  
+  /* When beryllium should move in, add this class */
+  .beryllium-in {
+    left: 40%; /* target position for Beryllium */
+  }
 
 /* Panel 2 speech bubble positions */
 #speech3 {
     top: 30%;
-    left: 55%;
+    left: 35%;
 }
 
 #speech4 {
@@ -166,5 +183,69 @@ body {
 
 #speech5 {
     top: 30%;
-    left: 55%;
+    left: 35%;
+}
+
+/*panel 3*/
+#speech6 {
+    top: 30%;
+    right: 15%;
+}
+
+#speech7 {
+    top: 30%;
+    left: 35%;
+}
+
+#speech8 {
+    top: 30%;
+    right: 15%;
+}
+
+/*panel 4*/
+#speech9 {
+    top: 30%;
+    right: 15%;
+}
+
+#speech10 {
+    top: 30%;
+    left: 35%;
+}
+
+#speech11 {
+    top: 30%;
+    right: 15%;
+}
+
+/*panel 5*/
+#speech12 {
+    top: 30%;
+    left: 35%;
+}
+
+#speech13 {
+    top: 30%;
+    right: 15%;
+}
+
+#speech14 {
+    top: 30%;
+    left: 35%;
+}
+
+/*panel 6*/
+#speech15 {
+    top: 30%;
+    right: 15%;
+}
+
+#speech16 {
+    top: 30%;
+    left: 35%;
+}
+
+#speech17 {
+    top: 30%;
+    right: 15%;
 }
