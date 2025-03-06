@@ -208,7 +208,7 @@ function updatePanel() {
         document.getElementById("speech17").classList.add("hidden");
         document.getElementById("speech17").classList.remove("visible");
     } else if (currentPanel === 6) {
-        // Reset panel 2 interactions.
+        // Reset panel 2 interactions. 
         thirdPanelClickCount = 0;
 
         // Show Oxygen image in its initial position.
