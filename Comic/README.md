@@ -7,27 +7,27 @@ As for the website, users can interact with the comic by clicking on the screen 
 
 ## 2. Features
 **2.1 Interactive Pages:** Users can click on speech bubbles to reveal dialogue and progress the story.
-2.2 Page Navigation: Arrows allow users to move between the previous and next pages.
-2.3 Character and Element Animations: Clicking on the page triggers animations for characters and elements.
-2.4 Educational Content: The comic incorporates chemistry concepts, such as chemical bonding, in an engaging form.
+**2.2 Page Navigation:** Arrows allow users to move between the previous and next pages.
+**2.3 Character and Element Animations:** Clicking on the page triggers animations for characters and elements.
+**2.4 Educational Content:** The comic incorporates chemistry concepts, such as chemical bonding, in an engaging form.
 
 ## 3. Team Contributions
-### 3.1 Mariam and Aakif: Responsible for coding, setting up the project's foundation, and incorporating interactivity into the website. Ensured the comic was functional, dynamic, and user-friendly.
-### 3.2 Shamsa: Authored the original story and collaborated on brainstorming the storyline. Responsible for the storyline, visuals, and illustrations of the main characters and their design using Photoshop.
-### 3.3 Nomundari: Assisted in brainstorming the storyline, contributed to the design of background images, and ensured the project stayed organized and finished on time. Facilitated communication between team members and managed project documentation.
+**3.1 Mariam and Aakif:** Responsible for coding, setting up the project's foundation, and incorporating interactivity into the website. Ensured the comic was functional, dynamic, and user-friendly.
+**3.2 Shamsa:** Authored the original story and collaborated on brainstorming the storyline. Responsible for the storyline, visuals, and illustrations of the main characters and their design using Photoshop.
+**3.3 Nomundari:** Assisted in brainstorming the storyline, contributed to the design of background images, and ensured the project stayed organized and finished on time. Facilitated communication between team members and managed project documentation.
 
 ## 4. Technical Details
-    4.1 HTML/CSS: For structuring and styling the website.
-    4.2 JavaScript: To implement interactivity, animations, and page navigation.
-    4.3 Photoshop: For creating and editing visual assets, like characters and backgrounds.
+**4.1 HTML/CSS:** For structuring and styling the website.
+**4.2 JavaScript:** To implement interactivity, animations, and page navigation.
+**4.3 Photoshop:** For creating and editing visual assets, like characters and backgrounds.
 
 ## 5. Interactivity Guide
-    5.1 Speech Bubbles: Click on speech bubbles to reveal dialogue and progress the story.
-    5.2 Page Navigation: Use the left and right arrows to navigate between pages.
-    5.3 Animations: Click on the page to trigger character and element animations.
+**5.1 Speech Bubbles:** Click on speech bubbles to reveal dialogue and progress the story.
+**5.2 Page Navigation:** Use the left and right arrows to navigate between pages.
+**5.3 Animations:** Click on the page to trigger character and element animations.
 
 ## 6. Future Enhancements
-    6.1 Audio Integration: Add background music and sound effects to enhance the user experience.
+**6.1 Audio Integration:** Add background music and sound effects to enhance the user experience.
 
 ## 7. Conclusion
 Through this Interactive Comic project, we believe we achieved our goal of creating an engaging and educational comic that has not only storytelling and interactivity but also chemistry concepts. By portraying Berrilium (Be) and Oxygen (O) as high school students, we made real-life chemical properties into a story about self-acceptance and friendship. The comic delivers its message effectively: everyone has unique strengths and limitations, which we must accept first.
