@@ -6,13 +6,13 @@ In the story, Berrilium (Be) is bullied in the classroom and feels lonely, envyi
 As for the website, users can interact with the comic by clicking on the screen to reveal dialogue, switching to the next pages using arrows, and triggering animations of the characters and elements. 
 
 ## 2. Features
-**2.1 Interactive Pages:** Users can click on speech bubbles to reveal dialogue and progress the story.
-**2.2 Page Navigation:** Arrows allow users to move between the previous and next pages.
-**2.3 Character and Element Animations:** Clicking on the page triggers animations for characters and elements.
-**2.4 Educational Content:** The comic incorporates chemistry concepts, such as chemical bonding, in an engaging form.
+- **2.1 Interactive Pages:** Users can click on speech bubbles to reveal dialogue and progress the story.
+- **2.2 Page Navigation:** Arrows allow users to move between the previous and next pages.
+- **2.3 Character and Element Animations:** Clicking on the page triggers animations for characters and elements.
+- **2.4 Educational Content:** The comic incorporates chemistry concepts, such as chemical bonding, in an engaging form.
 
 ## 3. Team Contributions
-**3.1 Mariam and Aakif:** Responsible for coding, setting up the project's foundation, and incorporating interactivity into the website. Ensured the comic was functional, dynamic, and user-friendly.
+- **3.1 Mariam and Aakif:** Responsible for coding, setting up the project's foundation, and incorporating interactivity into the website. Ensured the comic was functional, dynamic, and user-friendly.
 **3.2 Shamsa:** Authored the original story and collaborated on brainstorming the storyline. Responsible for the storyline, visuals, and illustrations of the main characters and their design using Photoshop.
 **3.3 Nomundari:** Assisted in brainstorming the storyline, contributed to the design of background images, and ensured the project stayed organized and finished on time. Facilitated communication between team members and managed project documentation.
 
