@@ -1,0 +1,35 @@
+1. Interactive Comic
+An engaging and interactive web-based comic that brings chemistry to life! This project follows the journey of Beryllium (Be) and Oxygen (O) as high school students starting their friendship, self-acceptance process, and bonding emotionally (and chemically too!).
+
+2. Features
+✅ Click on comic pages to reveal speech bubbles and advance the story.
+✅ Click on arrows to navigate between pages.
+✅ Characters and elements (such as paper) move interactively when clicked.
+✅ Smooth animations adds to the storytelling experience.
+✅ A storyline with a moral about self-worth, limitations, and openness.
+
+3.Storyline
+Beryllium (Be) struggles to bond with other elements and often feels isolated. In the classroom, she is bullied and envies Oxygen (O), who easily forms bonds with others. Despite Be’s resistance, Oxygen approaches her during lunchtime, offering friendship. Overwhelmed, Be runs away, rejecting the offer.
+However, the next day, Be realizes her mistake and apologizes. They have an open conversation, where they express their emotions and learn that everyone has their own limitations—and that’s okay. Be learns to accept her worth and opens herself up to connection.
+
+🔹 Moral of the story: We should embrace our individuality and be open to those around us.
+
+4.Technologies Used
+HTML, CSS, JavaScript – Core web technologies for structure, styling, and interactivity.
+Photoshop & AI Image generators – Used to create the comic visuals and backgrounds.
+
+5. Usage Instructions
+Click anywhere on the comic page to reveal speech bubbles and advance the dialogue.
+Click the arrow buttons to move to the next or previous page.
+Clicking on certain elements (e.g., paper, characters) will trigger animations.
+
+6. Contributors
+This project was built by a team of passionate creators:
+👩‍💻 Mariam & Aakif – Developed the coding structure and implemented interactivity.
+ ✍️ Shamsa – Wrote the storyline and illustrated the comic pages.
+ 🎨 Shamsa & Nomundari – Collaborated on visual design and development of the storyline.
+ 🏗️ Nomundari –  partly created background images, organized the workflow, facilitated communication and project documentation.
+
+7. Future Improvements
+🚀 Adding sound effects to enhance the experience.
+ 📖 Introducing more interactive elements.
