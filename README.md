@@ -18,15 +18,15 @@ Each members responsibilites were as follows: <br>
 Throughout our implementation all four members contributed in all aspects of the project supporting in different areas wherever needed. The process of implementing our idea was far from simple but through effective team communication and collaboration, we successfully got it done. 
 
 *Code Implementation* <br>
-1.HTML: <br>
+1. HTML: <br>
    - Created a single container holding six note images and an audio player section (with play/pause button, progress bar, and time display). <br>
    - Linked external CSS and JavaScript files for styling and functionality. <br>
-2.CSS: <br>
+2. CSS: <br>
    - Designed note images as circles with shadows.<br>
    - Defined an active state (.active) to enlarge the note and change its border to yellow.<br>
    - Added a pulse animation (@keyframes, pulseAnim, and .pulse) for visual emphasis.<br>
    - Styled the audio player for clarity and ease-of-use. <br>
-3.Java Script: <br>
+3. Java Script: <br>
    - Defined an array of timestamps to segment the audio into six days.<br>
    - Implemented event listeners:<br>
      - Audio timeupdate: Updates the progress bar, time display, and checks which day is active.<br>
