@@ -35,31 +35,24 @@
     margin: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     transition: transform 0.3s, border-color 0.3s;
+    cursor: pointer;
   }
   
+  /* Active note styling while its segment is playing */
   .note.active {
     transform: scale(1.2);
     border-color: #ff0;
   }
   
-  .clickable {
-    cursor: pointer;
+  /* Pulse animation for active day */
+  @keyframes pulseAnim {
+    0% { transform: scale(1.2); }
+    50% { transform: scale(1.35); }
+    100% { transform: scale(1.2); }
   }
   
   .pulse {
     animation: pulseAnim 1.5s infinite;
-  }
-  
-  @keyframes pulseAnim {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.15);
-    }
-    100% {
-      transform: scale(1);
-    }
   }
   
   .audio-player {

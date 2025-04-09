@@ -9,46 +9,24 @@ const notes = document.querySelectorAll('.note');
 // Define the timestamps for each diary day in seconds. Adjust these values as needed.
 const dayTimestamps = [0, 34, 58, 93, 139, 185];
 
-let currentDay = 0;
-let waitingForUser = true; // Start by waiting for the first note to be clicked
-
-function makeNoteClickable(index) {
-  notes[index].classList.add('clickable');
-  notes[index].classList.add('pulse');
-}
-
-function removeClickable(index) {
-  notes[index].classList.remove('clickable');
-  notes[index].classList.remove('pulse');
-}
-
-// Initially, make first note clickable with pulse effect.
-makeNoteClickable(0);
-
+// All notes are clickable: clicking a note jumps to its corresponding time.
 notes.forEach((note, index) => {
   note.addEventListener('click', () => {
-    if (note.classList.contains('clickable') && waitingForUser && index === currentDay) {
-      waitingForUser = false;
-      removeClickable(index);
-      audio.currentTime = dayTimestamps[currentDay];
-      audio.play();
-      playPauseBtn.innerHTML = "&#10074;&#10074;";
-    }
+    audio.currentTime = dayTimestamps[index];
   });
 });
 
 playPauseBtn.addEventListener('click', () => {
-  if (audio.paused && !waitingForUser) {
+  if (audio.paused) {
     audio.play();
     playPauseBtn.innerHTML = "&#10074;&#10074;";
-  } else if (!audio.paused) {
+  } else {
     audio.pause();
     playPauseBtn.innerHTML = "&#9658;";
   }
 });
 
 progressBar.addEventListener('click', (e) => {
-  if (waitingForUser) return;
   const rect = progressBar.getBoundingClientRect();
   const offsetX = e.clientX - rect.left;
   const newTime = (offsetX / progressBar.offsetWidth) * audio.duration;
@@ -65,28 +43,24 @@ audio.addEventListener('timeupdate', () => {
   seconds = seconds < 10 ? '0' + seconds : seconds;
   timeDisplay.textContent = `${minutes}:${seconds}`;
 
-  // When audio is playing, highlight the active note with enlarged size and yellow border.
-  if (!waitingForUser) {
-    notes.forEach((note, index) => {
-      if (index === currentDay) {
-        note.classList.add('active');
-      } else {
-        note.classList.remove('active');
-      }
-    });
-  } else {
-    notes.forEach(note => note.classList.remove('active'));
-  }
-  
-  // Pause the audio when the next day's segment is reached.
-  /*if (!waitingForUser && currentDay < dayTimestamps.length - 1) {
-    let nextDayStart = dayTimestamps[currentDay + 1];
-    if (audio.currentTime >= nextDayStart) {
-      audio.pause();
-      playPauseBtn.innerHTML = "&#9658;";
-      currentDay++;
-      waitingForUser = true;
-      makeNoteClickable(currentDay);
-    }
-  }*/
+  updateActiveNote(audio.currentTime);
 });
+
+function updateActiveNote(currentTime) {
+  let activeIndex = 0;
+  for (let i = dayTimestamps.length - 1; i >= 0; i--) {
+    if (currentTime >= dayTimestamps[i]) {
+      activeIndex = i;
+      break;
+    }
+  }
+  notes.forEach((note, index) => {
+    if (index === activeIndex) {
+      note.classList.add('active');
+      note.classList.add('pulse');
+    } else {
+      note.classList.remove('active');
+      note.classList.remove('pulse');
+    }
+  });
+}
