@@ -19,20 +19,20 @@ Throughout our implementation all four members contributed in all aspects of the
 
 *Code Implementation* <br>
 1.HTML: <br>
-   - Created a single container holding six note images and an audio player section (with play/pause button, progress bar, and time display).
-   - Linked external CSS and JavaScript files for styling and functionality.
+   - Created a single container holding six note images and an audio player section (with play/pause button, progress bar, and time display). <br>
+   - Linked external CSS and JavaScript files for styling and functionality. <br>
 2.CSS: <br>
-   - Designed note images as circles with shadows.
-   - Defined an active state (.active) to enlarge the note and change its border to yellow.
-   - Added a pulse animation (@keyframes, pulseAnim, and .pulse) for visual emphasis.
-   - Styled the audio player for clarity and ease-of-use.
+   - Designed note images as circles with shadows.<br>
+   - Defined an active state (.active) to enlarge the note and change its border to yellow.<br>
+   - Added a pulse animation (@keyframes, pulseAnim, and .pulse) for visual emphasis.<br>
+   - Styled the audio player for clarity and ease-of-use. <br>
 3.Java Script: <br>
-   - Defined an array of timestamps to segment the audio into six days.
-   - Implemented event listeners:
-     - Audio timeupdate: Updates the progress bar, time display, and checks which day is active.
-     - Note Clicks: Makes all notes clickable, enabling navigation to the corresponding audio segment when clicked.
-     - Play/Pause Button: Controls audio playback.
-   - Added logic to apply the pulse animation and active state style to the note corresponding to the current diary day while the audio plays.
+   - Defined an array of timestamps to segment the audio into six days.<br>
+   - Implemented event listeners:<br>
+     - Audio timeupdate: Updates the progress bar, time display, and checks which day is active.<br>
+     - Note Clicks: Makes all notes clickable, enabling navigation to the corresponding audio segment when clicked.<br>
+     - Play/Pause Button: Controls audio playback.<br>
+   - Added logic to apply the pulse animation and active state style to the note corresponding to the current diary day while the audio plays.<br>
 
 3. **Reflection/Evaluation:** *Were your expectations and goals met in the process of building the final working version?* <br>
 Reflecting on the process, we’re really proud of what we created. When recieving feedback from friends people appreciated the character, the sound design, and especially the interactive experience that brought everything together on the web. Of course, there’s always room to grow. If we were to keep working on this, we’d focus on  improving the audio quality. Although most of it came through clearly, in some spots our levels dipped a little lower than preferred. We’d also love to develop Susan’s story even more and possibly add more musical components or deepen the emotional arc. All in all, this was a project that challenged us to combine creativity, humor, and technical skill. Susan may have had a rough week, but she lived to tell the tale. And we’re really glad we got to help her share it.
