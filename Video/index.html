@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How to Survive a Group Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>How to Survive a Group Project</h1>
+
+  <div class="video-container">
+    <video id="project-video" controls>
+      <source src="video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <h2>Match the Character to Their Role!</h2>
+
+  <div class="game-container">
+    <div class="characters">
+      <img id="ghost" src="ghost.png" draggable="true" alt="Ghost Member">
+      <img id="control" src="control.png" draggable="true" alt="Control Freak">
+      <img id="doer" src="doer.png" draggable="true" alt="One Who Does Everything">
+    </div>
+
+    <div class="roles">
+      <div class="dropzone" data-correct="ghost">Ghost Member</div>
+      <div class="dropzone" data-correct="control">Control Freak</div>
+      <div class="dropzone" data-correct="doer">The One Who Does Everything</div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button id="checkBtn">Check Answers</button>
+    <button id="resetBtn">Try Again</button>
+  </div>
+
+  <div id="result-message"></div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
