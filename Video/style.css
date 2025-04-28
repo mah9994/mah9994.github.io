@@ -1,12 +1,11 @@
-/* Reset and Body */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Quicksand', 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Rubik Mono One', 'Quicksand', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
-  background-color: #fefefe;
 }
+
 
 /* Navigation Bar */
 nav {
@@ -87,17 +86,18 @@ nav ul li a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 600px;
-  max-width: 90%;
+  width: 700px;        /* was 600px, now 700px */
+  max-width: 95%;      /* slightly wider on smaller screens too */
   background: #ffffff;
-  padding: 20px 32px;
+  padding: 20px 40px;  /* a little more padding inside */
   border-radius: 999px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
   font-size: 24px;
-  color: #ff7f50;
+  color: #ff7f50;      /* pastel coral theme */
   cursor: pointer;
   transition: background 0.25s, transform 0.2s;
 }
+
 
 .start-bar:hover {
   background: #fff2ec;
