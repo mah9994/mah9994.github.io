@@ -1,95 +1,396 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    background-color: #f5f9ff;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  h1 {
-    color: #2b4f81;
-  }
-  
-  h2 {
-    color: #4e6da1;
-    margin-top: 40px;
-  }
-  
-  .video-container {
-    margin-top: 20px;
-  }
-  
-  video {
-    width: 80%;
-    max-width: 800px;
-    border: 2px solid #2b4f81;
-    border-radius: 10px;
-  }
-  
-  .game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-  }
-  
-  .characters {
-    margin-bottom: 20px;
-  }
-  
-  .characters img {
-    width: 100px;
-    margin: 10px;
-    cursor: grab;
-    border: 2px dashed #6fa3ef;
-    border-radius: 8px;
-    background-color: #fff;
-    padding: 5px;
-  }
-  
-  .roles {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .dropzone {
-    width: 200px;
-    height: 80px;
-    margin: 10px;
-    padding: 10px;
-    border: 2px dashed #ccc;
-    border-radius: 10px;
-    background-color: #e8f0fe;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-  }
-  
-  .buttons {
-    margin-top: 30px;
-  }
-  
-  button {
-    background-color: #4e6da1;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #3b5487;
-  }
-  
-  #result-message {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-  }
-  
+/* Reset and Body */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Quicksand', 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+  background-color: #fefefe;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #ffd9b3; /* pastel peach background */
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #ff7f50; /* pastel coral */
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+  background-color: #ffb899; /* slightly deeper peach */
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Home Landing Page */
+.home-landing {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Background Video */
+.background-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Home Content (button and text over video) */
+.home-content {
+  position: relative;
+  z-index: 1; /* IMPORTANT: Make sure this appears above video */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 20px;
+}
+
+/* Long clickable start bar */
+.start-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 600px;
+  max-width: 90%;
+  background: #ffffff;
+  padding: 20px 32px;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  font-size: 24px;
+  color: #ff7f50;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s;
+}
+
+.start-bar:hover {
+  background: #fff2ec;
+  transform: scale(1.03);
+}
+
+.start-bar .bar-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.start-bar .bar-text {
+  margin-right: 10px;
+}
+
+/* --- Video Page Styling --- */
+.section-video {
+  background-color: #fff7f0;
+  text-align: center;
+  padding-top: 70px;  /* reduced from 100px to 70px */
+  padding-bottom: 40px; /* slightly less padding at bottom too */
+  min-height: 100vh;
+}
+
+.video-container {
+  margin-top: 20px;
+}
+
+#project-video {
+  width: 90%;
+  max-width: 1200px;
+  height: auto;
+  border: 2px solid #ffc4a3;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom video controls */
+.custom-controls {
+  margin-top: 20px;
+}
+
+.custom-controls button {
+  background-color: #ff9d7d;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.custom-controls button:hover {
+  background-color: #ff7f50;
+  transform: scale(1.05);
+}
+
+
+/* --- Game Page Styling --- */
+.section-game {
+  background-color: #fff7f0;
+  text-align: center;
+  padding-top: 80px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Main Game Container */
+.game-container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Two Columns Layout */
+.columns-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  gap: 100px;
+  margin-top: 30px;
+}
+
+/* Left Column - Images with Captions */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Each Image + Caption Container */
+.character-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px; /* consistent container width */
+}
+
+/* Images */
+.character-box img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  cursor: grab;
+  border: 2px dashed #ffc4a3;
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 8px;
+}
+
+/* Captions */
+.character-box p {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #ff7f50;
+  font-weight: bold;
+}
+
+/* Right Column - Dropzones */
+.right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Keep every drop-zone the same size after an image lands */
+.dropzone {
+  width: 260px;
+  height: 140px;               /* a bit taller so the image fits */
+  padding: 10px;
+  border: 2px dashed #ffd9b3;
+  border-radius: 12px;
+  background-color: #fff2ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  box-sizing: border-box;      /* prevent growth */
+}
+
+/* Any image that ends up inside a drop-zone keeps its fixed size */
+.dropzone img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin: 0;                   /* remove default gaps */
+  border: none;                /* no dashed border inside zone */
+}
+
+/* Buttons Section */
+.buttons {
+  margin-top: 40px;
+}
+
+button {
+  background-color: #ff9d7d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #ff7f50;
+  transform: scale(1.05);
+}
+
+/* Result Message */
+#result-message {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff7f50;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* --- Score Page Styling --- */
+.section-score {
+  background-color: #fff7f0;
+  text-align: center;
+  padding-top: 80px;
+  min-height: 100vh;
+}
+
+h2 {
+  color: #ff7f50;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.score-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.score-box {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-box img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.score-box p {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #ff7f50;
+}
+
+.score-box input {
+  padding: 8px;
+  border: 2px solid #ffd9b3;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+#submitScore {
+  background-color: #ff9d7d;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#submitScore:hover {
+  background-color: #ff7f50;
+  transform: scale(1.05);
+}
+
+#final-scores {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff7f50;
+}
+
+.score-display {
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+#popup-text {
+  display: none;
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff7f50;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

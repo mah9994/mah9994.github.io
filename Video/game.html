@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Group Project Game</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="video.html">Video</a></li>
+      <li><a href="game.html">Game</a></li>
+      <li><a href="score.html">Score</a></li>
+    </ul>
+  </nav>
+  <section class="section-game">
+    <h2>Match the Character to Their Role!</h2>
+
+    <div class="game-container">
+      <div class="columns-container">
+
+        <!-- Left Column: Images with only Names as captions -->
+        <div class="left-column">
+          <div class="character-box">
+            <img id="ghost" src="ghost.png" draggable="true" alt="Ghost Member">
+            <p>Fatima</p>
+          </div>
+          <div class="character-box">
+            <img id="control" src="control.png" draggable="true" alt="Control Freak">
+            <p>Asini</p>
+          </div>
+          <div class="character-box">
+            <img id="doer" src="doer.png" draggable="true" alt="One Who Does Everything">
+            <p>Mariam</p>
+          </div>
+        </div>
+
+        <!-- Right Column: Dropzones -->
+        <div class="right-column">
+          <div class="dropzone" data-correct="ghost">Ghost Member</div>
+          <div class="dropzone" data-correct="control">Control Freak</div>
+          <div class="dropzone" data-correct="doer">The One Who Does Everything</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button id="checkBtn">Check Answers</button>
+      <button id="resetBtn">Try Again</button>
+    </div>
+
+    <div id="result-message"></div>
+
+  </section>
+
+  <!-- External Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>

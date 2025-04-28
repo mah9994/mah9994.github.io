@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Scores</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="video.html">Video</a></li>
+      <li><a href="game.html">Game</a></li>
+      <li><a href="score.html">Score</a></li>
+    </ul>
+  </nav>
+
+  <section class="section-score">
+    <h2>Score Each Member</h2>
+
+    <div class="score-container">
+      <!-- Fatima -->
+      <div class="score-box">
+        <img src="ghost.png" alt="Fatima">
+        <p>Fatima</p>
+        <input type="number" class="score-input" id="score-fatima" placeholder="Enter Score" min="0" max="100">
+      </div>
+
+      <!-- Asini -->
+      <div class="score-box">
+        <img src="control.png" alt="Asini">
+        <p>Asini</p>
+        <input type="number" class="score-input" id="score-asini" placeholder="Enter Score" min="0" max="100">
+      </div>
+
+      <!-- Mariam -->
+      <div class="score-box">
+        <img src="doer.png" alt="Mariam">
+        <p>Mariam</p>
+        <input type="number" class="score-input" id="score-mariam" placeholder="Enter Score" min="0" max="100">
+      </div>
+    </div>
+
+    <button id="submit-scores-button" onclick="submitScores()">Submit Scores</button>
+
+    <div id="popup-text" style="display: none; margin-top: 20px; font-size: 22px; font-weight: bold; color: #ff7f50;">
+      Reality of Group Projects
+    </div>
+
+  </section>
+
+  <!-- Script linked -->
+  <script src="script.js"></script>
+
+</body>
+</html>
