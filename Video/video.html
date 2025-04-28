@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <title>Watch the Video</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
-
 </head>
 <body>
 
@@ -20,35 +18,31 @@
     </ul>
   </nav>
 
-  <!-- Video Section -->
   <section class="section-video">
-    <div class="video-container">
+    <div class="video-container" style="position: relative;">
       <video id="project-video" controls>
         <source src="video.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
+
+      <!-- Quiz button overlay (hidden at first) -->
+      <button id="quiz-button" style="display: none;" class="overlay-button">
+        Let's see if you got the characters right!
+      </button>
+
+      <!-- New Score button overlay (hidden at first) -->
+      <button id="score-button" style="display: none;" class="overlay-button">
+        Give a score to each member
+      </button>
     </div>
 
-    <!-- Single Speed Toggle Button -->
+    <!-- Speed toggle button -->
     <div class="custom-controls">
       <button id="speedButton">Speed: 1x</button>
     </div>
   </section>
 
-  <script>
-    const video = document.getElementById('project-video');
-    const speedButton = document.getElementById('speedButton');
-
-    // List of speeds to cycle through
-    const speeds = [1, 1.5, 2];
-    let currentSpeedIndex = 0;
-
-    speedButton.addEventListener('click', () => {
-      currentSpeedIndex = (currentSpeedIndex + 1) % speeds.length;
-      video.playbackRate = speeds[currentSpeedIndex];
-      speedButton.textContent = `Speed: ${speeds[currentSpeedIndex]}x`;
-    });
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>

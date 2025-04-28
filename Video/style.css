@@ -394,3 +394,26 @@ h2 {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+.overlay-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ff9d7d;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s, transform 0.3s;
+  z-index: 10;
+}
+
+.overlay-button:hover {
+  background-color: #ff7f50;
+  transform: translate(-50%, -50%) scale(1.05);
+}
