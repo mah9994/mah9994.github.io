@@ -1,217 +1,237 @@
-// ===== Clear old game state on fresh manual page load =====
-if (window.location.pathname.includes("video.html") && !localStorage.getItem('comingBack')) {
-  localStorage.removeItem('gameCompleted');
-  localStorage.removeItem('resumeTime');
+/* ---------- reset flags on manual reload of video.html ---------- */
+if (window.location.pathname.includes("video.html")
+    && !localStorage.getItem("comingBack")) {
+  localStorage.removeItem("gameCompleted");
+  localStorage.removeItem("resumeTime");
 }
 
-// ===== Detect Which Page =====
-const page = document.body.getAttribute('data-page') || window.location.pathname.split("/").pop();
+/* ---------- quick helper ---------- */
+function exitFullscreen() {
+  if (document.fullscreenElement)      document.exitFullscreen();
+  else if (document.webkitFullscreenElement) document.webkitExitFullscreen();
+  else if (document.mozFullScreenElement)    document.mozCancelFullScreen();
+}
 
-// ===== VIDEO PAGE LOGIC =====
+/* ---------- page detection ---------- */
+const page = (document.body.dataset.page ||
+              window.location.pathname.split("/").pop()).toLowerCase();
+
+/* ====================================================================== */
+/* ===========================  VIDEO PAGE ============================== */
+/* ====================================================================== */
 if (page.includes("video")) {
-  const video = document.getElementById('project-video');
-  const quizBtn = document.getElementById('quiz-button');
-  const scoreBtn = document.getElementById('score-button');
-  const speedBtn = document.getElementById('speedButton');
+  const video    = document.getElementById("project-video");
+  const quizBtn  = document.getElementById("quiz-button");
+  const scoreBtn = document.getElementById("score-button");
+  const speedBtn = document.getElementById("speedButton");
 
-  const resume = localStorage.getItem('resumeTime');
-  const comingBack = localStorage.getItem('comingBack') === 'true';
+  /* ----------- resume video if returning from game ----------- */
+  const resumeTime = localStorage.getItem("resumeTime");
+  const comingBack = localStorage.getItem("comingBack") === "true";
 
-  video.addEventListener('loadedmetadata', () => {
-    if (resume && comingBack) {
-      console.log("Resuming from:", resume);
-      video.currentTime = parseFloat(resume);
-      setTimeout(() => {
-        video.play();
-      }, 200);
-      localStorage.removeItem('resumeTime');
-      localStorage.removeItem('comingBack');
+  video.addEventListener("loadedmetadata", () => {
+    if (resumeTime && comingBack) {
+      video.currentTime = parseFloat(resumeTime);
+      setTimeout(() => video.play(), 200);
+      localStorage.removeItem("resumeTime");
+      localStorage.removeItem("comingBack");
     }
   });
 
-  // Speed toggle
+  /* ----------- speed toggle ----------- */
   const speeds = [1, 1.5, 2];
   let idx = 0;
-  speedBtn.addEventListener('click', () => {
+  speedBtn.addEventListener("click", () => {
     idx = (idx + 1) % speeds.length;
     video.playbackRate = speeds[idx];
     speedBtn.textContent = `Speed: ${speeds[idx]}x`;
   });
 
-  // Pause at 1:48
-  const TARGET_TIME = 108; // 1 min 48 sec
-  video.addEventListener('timeupdate', () => {
-    const completed = localStorage.getItem('gameCompleted') === 'true';
-    const shown = quizBtn.dataset.shown === 'yes';
+  /* ----------- overlay-pending flag ----------- */
+  let pendingOverlay = null;            // "quiz" | "score" | null
 
-    if (!completed && !shown && video.currentTime >= TARGET_TIME) {
-      video.pause();
-      quizBtn.style.display = 'block';
-      quizBtn.dataset.shown = 'yes';
+  /* ----------- show overlay helpers ----------- */
+  function showQuizOverlay() {
+    video.pause();
+    quizBtn.style.display = "block";
+    quizBtn.dataset.shown = "yes";
+  }
+  function showScoreOverlay() {
+    scoreBtn.style.display = "block";
+  }
+
+  /* ----------- 1 : 48 logic ----------- */
+  const TARGET = 108;   // seconds
+  video.addEventListener("timeupdate", () => {
+    const completed = localStorage.getItem("gameCompleted") === "true";
+    const already   = quizBtn.dataset.shown === "yes";
+
+    if (!completed && !already && video.currentTime >= TARGET) {
+      if (document.fullscreenElement) {           // in fullscreen
+        pendingOverlay = "quiz";
+        exitFullscreen();                         // will show overlay after exit
+      } else {
+        showQuizOverlay();
+      }
     }
   });
 
-  // Go to game page
-  quizBtn.addEventListener('click', () => {
-    localStorage.setItem('resumeTime', video.currentTime);
-    localStorage.setItem('comingBack', 'true');
+  /* ----------- ended logic ----------- */
+  video.addEventListener("ended", () => {
+    if (document.fullscreenElement) {
+      pendingOverlay = "score";
+      exitFullscreen();
+    } else {
+      showScoreOverlay();
+    }
+  });
+
+  /* ----------- fullscreen change handler ----------- */
+  function onFsChange() {
+    /* when exiting FS & an overlay is pending, show it */
+    if (!document.fullscreenElement && pendingOverlay) {
+      if (pendingOverlay === "quiz")  showQuizOverlay();
+      if (pendingOverlay === "score") showScoreOverlay();
+      pendingOverlay = null;
+    }
+  }
+  document.addEventListener("fullscreenchange", onFsChange);
+  document.addEventListener("webkitfullscreenchange", onFsChange);
+  document.addEventListener("mozfullscreenchange", onFsChange);
+
+  /* ----------- button clicks ----------- */
+  quizBtn.addEventListener("click", () => {
+    localStorage.setItem("resumeTime", video.currentTime);
+    localStorage.setItem("comingBack", "true");
     window.location.href = "game.html";
   });
-
-  // When video ends, show score button
-  video.addEventListener('ended', () => {
-    scoreBtn.style.display = 'block';
-  });
-
-  // Go to score page
-  scoreBtn.addEventListener('click', () => {
+  scoreBtn.addEventListener("click", () => {
+    localStorage.setItem("resumeTime", video.currentTime);
     window.location.href = "score.html";
   });
 }
 
-// ===== GAME PAGE LOGIC =====
+/* ====================================================================== */
+/* ===========================  GAME PAGE  ============================== */
+/* ====================================================================== */
 else if (page.includes("game")) {
   const characterBoxes = document.querySelectorAll(".character-box");
-  const dropzones = document.querySelectorAll(".dropzone");
-  const checkBtn = document.getElementById("checkBtn");
-  const resetBtn = document.getElementById("resetBtn");
-  const resultMessage = document.getElementById("result-message");
+  const dropzones      = document.querySelectorAll(".dropzone");
+  const checkBtn       = document.getElementById("checkBtn");
+  const resetBtn       = document.getElementById("resetBtn");
+  const resultMsg      = document.getElementById("result-message");
 
-  const originalTexts = {
-    ghost: "Ghost Member",
-    control: "Control Freak",
-    doer: "The One Who Does Everything"
+  const originals = {
+    ghost   : "Ghost Member",
+    control : "Control Freak",
+    doer    : "The One Who Does Everything"
   };
 
-  // Drag start
+  /* drag-start on every image */
   characterBoxes.forEach(box => {
-    const img = box.querySelector("img");
-    img.addEventListener("dragstart", (e) => {
-      e.dataTransfer.setData("text/plain", img.id);
+    box.querySelector("img").addEventListener("dragstart", e => {
+      e.dataTransfer.setData("text/plain", e.target.id);
     });
   });
 
-  // Drag over/leave/drop
+  /* drag-over / drop */
   dropzones.forEach(zone => {
-    zone.addEventListener('dragover', (e) => {
+    zone.addEventListener("dragover", e => {
       e.preventDefault();
       zone.style.backgroundColor = "#ffe0d1";
     });
-
-    zone.addEventListener('dragleave', () => {
+    zone.addEventListener("dragleave", () => {
       zone.style.backgroundColor = "#fff2ec";
     });
-
-    zone.addEventListener('drop', (e) => {
+    zone.addEventListener("drop", e => {
       e.preventDefault();
-      const draggedId = e.dataTransfer.getData("text/plain");
-      const draggedImg = document.getElementById(draggedId);
-
+      const id  = e.dataTransfer.getData("text/plain");
+      const img = document.getElementById(id);
       zone.innerHTML = "";
-      zone.appendChild(draggedImg);
+      zone.appendChild(img);
       zone.style.backgroundColor = "#ffd5c2";
     });
   });
 
-  // Check answers
-  checkBtn.addEventListener('click', () => {
-    let correct = true;
-    dropzones.forEach(zone => {
+  /* check answers */
+  checkBtn.addEventListener("click", () => {
+    const allCorrect = [...dropzones].every(zone => {
       const img = zone.querySelector("img");
-      if (!img || img.id !== zone.dataset.correct) {
-        correct = false;
-      }
+      return img && img.id === zone.dataset.correct;
     });
 
-    if (correct) {
-      resultMessage.textContent = "🎉 Correct!";
-      resultMessage.style.color = "green";
-      resultMessage.style.animation = "pop 0.5s";
+    if (allCorrect) {
+      resultMsg.textContent = "🎉 Correct!";
+      resultMsg.style.color = "green";
+      resultMsg.style.animation = "pop 0.5s";
 
-      localStorage.setItem('gameCompleted', 'true');
-      localStorage.setItem('comingBack', 'true');
+      localStorage.setItem("gameCompleted", "true");
+      localStorage.setItem("comingBack", "true");
 
-      setTimeout(() => {
-        window.location.href = 'video.html';
-      }, 1500);
+      setTimeout(() => (window.location.href = "video.html"), 1500);
     } else {
-      resultMessage.textContent = "❌ Oops! Some matches are wrong. Try again!";
-      resultMessage.style.color = "red";
-      resultMessage.style.animation = "none";
+      resultMsg.textContent = "❌ Some matches are wrong. Try again!";
+      resultMsg.style.color = "red";
+      resultMsg.style.animation = "none";
     }
   });
 
-  // Reset game
-  resetBtn.addEventListener('click', () => {
-    resultMessage.textContent = "";
-    resultMessage.style.animation = "none";
+  /* reset */
+  resetBtn.addEventListener("click", () => {
+    resultMsg.textContent = "";
+    resultMsg.style.animation = "none";
 
-    const characterContainer = document.querySelector(".left-column");
-    characterContainer.innerHTML = ""; // Clear left column
+    /* rebuild left column */
+    const col = document.querySelector(".left-column");
+    col.innerHTML = "";
 
-    const characters = [
-      { id: "ghost", img: "ghost.png", name: "Fatima" },
-      { id: "control", img: "control.png", name: "Asini" },
-      { id: "doer", img: "doer.png", name: "Mariam" }
-    ];
-
-    characters.forEach(character => {
-      const box = document.createElement('div');
-      box.classList.add('character-box');
-
-      const img = document.createElement('img');
-      img.src = character.img;
-      img.id = character.id;
-      img.alt = character.name;
-      img.draggable = true;
-
-      const caption = document.createElement('p');
-      caption.textContent = character.name;
-
-      box.appendChild(img);
-      box.appendChild(caption);
-      characterContainer.appendChild(box);
-
-      // Reattach drag start
-      img.addEventListener('dragstart', (e) => {
+    [
+      { id:"ghost",   src:"ghost.png",   name:"Fatima" },
+      { id:"control", src:"control.png", name:"Asini"  },
+      { id:"doer",    src:"doer.png",    name:"Mariam" }
+    ].forEach(ch => {
+      const box = document.createElement("div");
+      box.className = "character-box";
+      const img = document.createElement("img");
+      img.src = ch.src; img.id = ch.id; img.alt = ch.name; img.draggable = true;
+      img.addEventListener("dragstart", e => {
         e.dataTransfer.setData("text/plain", img.id);
       });
+      const p = document.createElement("p"); p.textContent = ch.name;
+      box.append(img, p); col.appendChild(box);
     });
 
-    // Reset dropzones
-    dropzones.forEach(zone => {
-      const roleKey = zone.dataset.correct;
-      zone.textContent = originalTexts[roleKey];
-      zone.style.backgroundColor = "#fff2ec";
+    /* reset dropzones */
+    dropzones.forEach(z => {
+      z.textContent = originals[z.dataset.correct];
+      z.style.backgroundColor = "#fff2ec";
     });
   });
 }
 
-// ===== SCORE PAGE LOGIC =====
+/* ====================================================================== */
+/* ===========================  SCORE PAGE  ============================= */
+/* ====================================================================== */
 else if (page.includes("score")) {
-  const submitButton = document.getElementById('submit-scores-button');
-  const allInputs = document.querySelectorAll('.score-input');
+  const submit = document.getElementById("submit-scores-button");
+  const inputs = document.querySelectorAll(".score-input");
 
-  if (submitButton) {
-    submitButton.addEventListener('click', () => {
-      allInputs.forEach(input => {
-        const scoreDisplay = document.createElement('div');
-        scoreDisplay.textContent = `Actual Score: 97`; // Always 97
-        scoreDisplay.classList.add('score-display');
-        input.parentElement.appendChild(scoreDisplay);
-        input.disabled = true;
+  if (submit) {
+    submit.addEventListener("click", () => {
+      inputs.forEach(inp => {
+        const div = document.createElement("div");
+        div.className = "score-display";
+        div.textContent = "Actual Score: 97";
+        inp.parentElement.appendChild(div);
+        inp.disabled = true;
       });
+      submit.disabled = true;
 
-      submitButton.disabled = true;
-
-      // Show Reality of Group Projects text
-      const reality = document.createElement('div');
-      reality.textContent = "Reality of Group Projects";
-      reality.style.marginTop = "20px";
-      reality.style.fontWeight = "bold";
-      reality.style.fontSize = "20px";
-      reality.style.color = "#FF8C00";
-      submitButton.parentElement.appendChild(reality);
+      const txt = document.createElement("div");
+      txt.textContent = "Reality of Group Projects";
+      txt.style.cssText =
+        "margin-top:20px;font-weight:bold;font-size:22px;color:#FF8C00";
+      submit.parentElement.appendChild(txt);
     });
   }
 }

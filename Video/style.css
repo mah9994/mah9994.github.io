@@ -417,3 +417,20 @@ h2 {
   background-color: #ff7f50;
   transform: translate(-50%, -50%) scale(1.05);
 }
+
+
+#quiz-button, #score-button {
+  position: fixed;  /* NOT absolute */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ff9d7d;
+  color: white;
+  padding: 16px 32px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  display: none;
+  z-index: 10000; /* Very high to stay on top */
+}
