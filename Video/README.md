@@ -168,5 +168,7 @@ Overall, we’re proud of what we created. It’s not just a project—it’s a 
 
 ## Contributions
 **Asini:** booking equipment, acting, filming, video editing
+
 **Fatima:** writing story and shot sequence, acting, filming, website implementation and design
+
 **Mariam:** writing story and shot sequence, acting, filming, website structure, documentation
