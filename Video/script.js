@@ -124,7 +124,7 @@ else if (page.includes("game")) {
     });
 
     if (correct) {
-      resultMessage.textContent = "🎉 Correct! You survived the group project!";
+      resultMessage.textContent = "🎉 Correct!";
       resultMessage.style.color = "green";
       resultMessage.style.animation = "pop 0.5s";
 
