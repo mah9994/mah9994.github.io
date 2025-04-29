@@ -55,7 +55,7 @@ Audio played a major role in shaping the mood and comedic tone. Our sound design
 ### Website Implementation
 We developed a multi-page interactive website using HTML, CSS, and JavaScript, designed to complement the theme and narrative of our video project. Each page serves a specific purpose and includes interactive or multimedia elements to enhance user engagement.
 
-##### Overview of Pages
+**Overview of Pages**
 1. **Landing Page (index.html)**
 
 **Purpose:** Serves as the entry point of the website, introducing the project and setting the tone.
@@ -68,6 +68,8 @@ We developed a multi-page interactive website using HTML, CSS, and JavaScript, d
 
 - Minimal UI elements to maintain a cinematic feel.
 
+---
+
 2. **Video Page (video.html)**
 
 **Purpose:** Showcases the full video with custom controls.
@@ -77,6 +79,8 @@ We developed a multi-page interactive website using HTML, CSS, and JavaScript, d
 - Embedded video player with play/pause, volume, skip, and fullscreen controls implemented via JavaScript.
 
 - A stylized layout using CSS to keep the viewer’s focus on the video.
+
+---
 
 3. **Game Page (game.html)**
 
@@ -92,6 +96,8 @@ We developed a multi-page interactive website using HTML, CSS, and JavaScript, d
 
 - Character images and roles are consistent with those shown in the video.
 
+---
+
 4. **Score Page (score.html)**
 
 **Purpose:** Displays the user’s performance in the drag-and-drop game.
@@ -102,7 +108,7 @@ We developed a multi-page interactive website using HTML, CSS, and JavaScript, d
 
 - JavaScript calculates the score and optionally displays a message (“Reality of Group Projects”).
 
-#### Source Code Files
+**Source Code Files**
 **index.html**
 
 - Contains the HTML structure for the landing page.
