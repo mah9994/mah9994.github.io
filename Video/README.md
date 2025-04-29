@@ -108,7 +108,10 @@ We developed a multi-page interactive website using HTML, CSS, and JavaScript, d
 
 - JavaScript calculates the score and optionally displays a message (“Reality of Group Projects”).
 
+---
+
 **Source Code Files**
+
 **index.html**
 
 - Contains the HTML structure for the landing page.
@@ -146,6 +149,8 @@ Handles all front-end interactivity:
 - Navigation between pages and conditional display logic
 
 - Optional enhancements like animations or sound effects
+
+
 
 ## Reflection & Evaluation
 Our goal was to create a project that blends humor, relatability, and light interaction—and in many ways, we believe we achieved that. From concept to execution, we aimed to capture the chaotic, sometimes absurd process that university students go through when tackling group assignments. The final product reflects both our personalities and our collective sense of humor.
