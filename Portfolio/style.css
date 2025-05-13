@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  nav {
+    background-color: #dbeafe;
+    padding: 1em;
+    text-align: center;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+  }
+  nav a {
+    text-decoration: none;
+    color: #1e3a8a;
+    font-weight: bold;
+  }
+  .home .intro {
+    display: flex;
+    padding: 2em;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3em;
+  }
+  .bio {
+    max-width: 50%;
+  }
+  .photo {
+    transform: translateX(-60px); /* Adjust as needed */
+  }  
+  .photo img {
+    max-width: 400px;
+    border-radius: 10px;
+  }
+  .icons img {
+    width: 30px;
+    margin-right: 1em;
+  }
+  .cv-button {
+    display: inline-block;
+    margin-top: 1em;
+    background: #1e3a8a;
+    color: white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .skills {
+    padding: 2em;
+    background-color: #e0f2fe;
+    text-align: center;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    padding: 2em;
+  }
+  .project-box, .experience-box {
+    background-color: white;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .project-box img, .experience-box img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .project-box:hover, .experience-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  .experience-box {
+    display: flex;
+    gap: 2em;
+    margin: 2em;
+    align-items: center;
+  }
+
+  .icons {
+    margin-top: 1em;
+  }
+  
+  .icon-link {
+    font-size: 30px;
+    color: #666; /* grey */
+    margin-right: 1em;
+    transition: color 0.3s ease;
+  }
+  
+  .icon-link:hover {
+    color: #1e3a8a; /* blue */
+  }
+
+  .centered-paragraph {
+    font-size: 1.25rem;
+    text-align: center;
+    max-width: 90%;
+    margin: 1em auto 2em auto;
+  }
+  
+  .education {
+    padding: 2em;
+    background-color: #f4f4f4;
+  }
+  
+  .edu-entry {
+    margin-bottom: 2em;
+  }
+  
+  .edu-entry h3 {
+    font-size: 1.2rem;
+    color: #1e3a8a;
+  }
+  
+  .edu-entry .date {
+    font-weight: normal;
+    color: #555;
+    float: right;
+    font-size: 1rem;
+  }
+  
