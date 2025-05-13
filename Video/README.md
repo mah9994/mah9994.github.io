@@ -1,40 +1,40 @@
 # How to Survive a Group Project
-### Project Description
+## Project Description
 How to Survive a Group Project is a humorous, multimedia experience that dramatizes the chaotic reality of student group work. We wanted to create something both funny and relatable—something that captures the rollercoaster of emotions every student goes through during group assignments. From awkward introductions to pretending to be productive, and ultimately panicking the night before the deadline, the video walks viewers through the universal steps of survival.
 
 The overall concept is centered on presenting a narrative with exaggerated but familiar group project scenarios. The accompanying website serves as a playful platform to host our video and a simple drag-and-drop game that tests how well you understand each team member’s “survival role.
 
-### Process
+## Process
 We followed a three-step concept structure:
 1. Don’t Avoid and Meet the Team
 2. Pretend to Be Productive
 3. Panic and Pull an All-Nighter
 
-#### Planning and Filming
+### Planning and Filming
 
 Planning and Filming
 We created a detailed storyboard that broke the video down into individual scenes and shot sequences. Each scene was designed with comedic timing, camera angles, and shot transitions in mind to support the storytelling.
 
 Filming equipment and setup:
 
-- Camera: Canon Rebel T4i DSLR
+- **Camera:** Canon Rebel T4i DSLR
 
-- Lens: Canon 18–135mm 008 lens for versatile zoom and wide-angle options
+- **Lens:** Canon 18–135mm 008 lens for versatile zoom and wide-angle options
 
-- Tripod: Manfrotto 504HD, providing smooth panning and stable shots
+- **Tripod:** Manfrotto 504HD, providing smooth panning and stable shots
 
 We shot scenes in various campus locations including classrooms, the library, and the dining hall to reflect the typical university setting.
 
-#### Editing
+### Editing
 We primarily used Adobe Premiere Pro to assemble and polish the video. Tasks included:
 
-- Video overlays and freeze frames: To emphasize comedic pauses or character reactions
+- **Video overlays and freeze frames:** To emphasize comedic pauses or character reactions
 
-- Text overlays: For character introductions and mock "tips for success"
+- **Text overlays:** For character introductions and mock "tips for success"
 
-- Color correction and sharpening: Ensuring visual consistency across varied lighting conditions
+- **Color correction and sharpening:** Ensuring visual consistency across varied lighting conditions
 
-- Cutting and pacing: Fine-tuning the comedic timing and narrative rhythm
+- **Cutting and pacing:** Fine-tuning the comedic timing and narrative rhythm
 
 Special editing touches:
 
@@ -43,32 +43,34 @@ Special editing touches:
 - The title sequence and final scene transitions were enhanced using CapCut, which allowed for faster text animation and stylized effects
 
 
-#### Sound Design
+### Sound Design
 Audio played a major role in shaping the mood and comedic tone. Our sound design approach included:
 
-- Background music and effects: Most sound elements were sourced from freesound.org, carefully selected to complement each scene's mood — from light-hearted background tunes to exaggerated sound effects for comedic emphasis.
+- **Background music and effects:** Most sound elements were sourced from freesound.org, carefully selected to complement each scene's mood — from light-hearted background tunes to exaggerated sound effects for comedic emphasis.
 
-- Environmental sounds: Rather than removing all ambient noise, we selectively kept natural sounds (e.g., air conditioning hums, distant chatter) and adjusted their volume to create a more immersive and relatable atmosphere.
+- **Environmental sounds:** Rather than removing all ambient noise, we selectively kept natural sounds (e.g., air conditioning hums, distant chatter) and adjusted their volume to create a more immersive and relatable atmosphere.
 
-- Custom recordings: We recorded specific audio clips, such as Fatima’s gaming sessions and Netflix binge-watching, to enhance realism and reinforce the characters’ personalities.
+- **Custom recordings:** We recorded specific audio clips, such as Fatima’s gaming sessions and Netflix binge-watching, to enhance realism and reinforce the characters’ personalities.
 
-#### Website Implementation
+### Website Implementation
 We developed a multi-page interactive website using HTML, CSS, and JavaScript, designed to complement the theme and narrative of our video project. Each page serves a specific purpose and includes interactive or multimedia elements to enhance user engagement.
 
-##### Overview of Pages
-1. Landing Page (index.html)
+**Overview of Pages**
+1. **Landing Page (index.html)**
 
-Purpose: Serves as the entry point of the website, introducing the project and setting the tone.
+**Purpose:** Serves as the entry point of the website, introducing the project and setting the tone.
 
-Features:
+**Features:**
 
 - A full-screen background video that auto-plays and loops for a visually engaging intro.
 
 - A "Start" or "Enter" button that smoothly transitions users to the main video or game page.
 
-= Minimal UI elements to maintain a cinematic feel.
+- Minimal UI elements to maintain a cinematic feel.
 
-2. Video Page (video.html)
+---
+
+2. **Video Page (video.html)**
 
 **Purpose:** Showcases the full video with custom controls.
 
@@ -78,7 +80,9 @@ Features:
 
 - A stylized layout using CSS to keep the viewer’s focus on the video.
 
-3. Game Page (game.html)
+---
+
+3. **Game Page (game.html)**
 
 **Purpose:** Offers a light interactive activity where users match characters to their roles in the project.
 
@@ -92,7 +96,9 @@ Features:
 
 - Character images and roles are consistent with those shown in the video.
 
-4. Score Page (score.html)
+---
+
+4. **Score Page (score.html)**
 
 **Purpose:** Displays the user’s performance in the drag-and-drop game.
 
@@ -102,7 +108,10 @@ Features:
 
 - JavaScript calculates the score and optionally displays a message (“Reality of Group Projects”).
 
-##### Source Code Files
+---
+
+**Source Code Files**
+
 **index.html**
 
 - Contains the HTML structure for the landing page.
@@ -141,7 +150,9 @@ Handles all front-end interactivity:
 
 - Optional enhancements like animations or sound effects
 
-### Reflection & Evaluation
+
+
+## Reflection & Evaluation
 Our goal was to create a project that blends humor, relatability, and light interaction—and in many ways, we believe we achieved that. From concept to execution, we aimed to capture the chaotic, sometimes absurd process that university students go through when tackling group assignments. The final product reflects both our personalities and our collective sense of humor.
 
 However, the process wasn’t without its challenges. One major lesson we learned early on was the importance of **pre-production planning**. We didn’t begin with a properly fleshed-out storyboard, which meant that a significant amount of time during filming was spent **improvising scenes, deciding camera angles on the spot**, and debating how to structure certain parts of the narrative. This led to **delays**, repeated takes, and a few logistical headaches—especially when coordinating between different campus locations.
@@ -155,7 +166,9 @@ On the web development side, the interactive elements like the **drag-and-drop g
 Overall, we’re proud of what we created. It’s not just a project—it’s a snapshot of our creativity, teamwork, and the countless hours we spent bouncing ideas off one another (usually at midnight). Most importantly, we had fun throughout, and we’ll carry the lessons from this experience—both technical and collaborative—into our future work.
 
 
-### Contributions
+## Contributions
 **Asini:** booking equipment, acting, filming, video editing
+
 **Fatima:** writing story and shot sequence, acting, filming, website implementation and design
+
 **Mariam:** writing story and shot sequence, acting, filming, website structure, documentation
