@@ -33,7 +33,7 @@ body {
     max-width: 50%;
   }
   .photo {
-    transform: translateX(-60px); /* Adjust as needed */
+    transform: translateX(-60px);
   }  
   .photo img {
     max-width: 400px;
@@ -72,9 +72,19 @@ body {
     color: inherit;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .project-box img, .experience-box img {
+  .project-box img {
     width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1em;
+  }
+
+  .experience-box img {
+    width: 120px;
+    height: auto;
     border-radius: 5px;
+    object-fit: contain;
   }
   
   .project-box:hover, .experience-box:hover {
