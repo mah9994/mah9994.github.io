@@ -9,7 +9,7 @@ window.onload = () => {
   };
 
 // Some sound when hovering
-const hoverSound = new Audio("sounds/hover.mp3"); // must be a short mp3 file
+const hoverSound = new Audio("sounds/hover.mp3");
 
 document.querySelectorAll(".project-box").forEach(box => {
     box.addEventListener("mouseenter", () => {
